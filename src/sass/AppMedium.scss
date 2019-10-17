@@ -1,0 +1,93 @@
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+        body {
+            color: #333333;
+            background-color: #f5f5f5;
+        }
+        img {
+            border: 0;
+            max-width: 100%;
+            vertical-align: top;
+        }
+        .link-headers{
+        display:block
+        }
+        li {
+            list-style: none;
+        }
+        .select-nation{
+            text-align:right;
+        }
+        .first-link:hover{
+                background-color: red;
+                color: white;
+        }
+        .second-link:hover{
+            background-color: red;
+            color: white;
+        }
+        .third-link:hover{
+            background-color: red;
+            color: white;
+        }
+        .upper {
+            line-height: 36px;
+        }
+        li.third-link {
+            padding: 0 7px;
+        }
+        li.second-link {
+            padding: 0 7px;
+        }
+        li.first-link {
+            padding: 0 7px;
+        }
+        ul{
+            margin-left:0;
+        }
+        select {
+          background-image: url(http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/_patterns/default/grain3.png);
+            border: 0;
+            padding:10px
+        }
+        select:hover{
+            background-color:white;
+        }
+        .Home{
+            background-image: url(http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/_patterns/default/grain3.png);
+        }
+        .dropbtn {
+            background-color: #f5f5f5;       
+            font-size: 14px;
+            border: none;
+          }
+          
+          .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          
+          .dropdown-content a:hover {background-color: white;}
+          
+          .dropdown:hover .dropdown-content {display: block;}
+          
+          .dropdown:hover .dropbtn {background-color: white;}
+          ul.links {
+            display: -webkit-inline-box;
+            margin: 0;
+            float: left;
+        }
+    }
