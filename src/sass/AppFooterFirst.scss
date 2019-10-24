@@ -1,0 +1,75 @@
+.back-footer {
+    background-color: white;
+    margin: 2%;
+}
+.footer-first {
+    display: flex;
+}
+.footer-first {
+    justify-content: space-between;
+}
+i.fas.fa-map-marker-alt{
+    border-radius: 50%;
+    background-color: lightskyblue;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+i.fab.fa-twitter-square{
+border-radius: 50%;
+    background-color: lightskyblue;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.regroup {
+    display: flex;
+    align-items: center;
+}
+li.list-footer {
+    font-size: 14px;
+}
+li.list-footer:hover {
+    color:lightskyblue;
+}
+li.list-footer:hover span.movement{left:0px;}
+.footer-first {
+    margin: 4%;
+}
+.back-footer-second{
+   background:#111111 ;
+    max-width: 100%;
+    margin-top: 40px;
+}
+span.last-element {
+    color: white;
+    font-size: 14px;
+    margin:4%;
+}
+img.image-footer {
+    width: 180px;
+    height: 32px;
+    margin: 4%;
+}
+.last-div {
+    display: flex;
+    justify-content: space-between;
+}
+i.fas.fa-map-marker-alt:hover{
+    background: orange;
+    transition: .5s;
+}
+i.fab.fa-twitter-square:hover{
+    background: orange;
+    transition: .5s;
+}

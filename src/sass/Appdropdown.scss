@@ -1,0 +1,322 @@
+ .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+          .dropdown2 {
+            position: relative;
+            display: inline-block;
+          }
+          .dropdown3 {
+            position: relative;
+            display: inline-block;
+          }
+          .dropdown4 {
+            position: relative;
+          }
+          .dropdown5 {
+            position: relative;
+          }
+          .dropdown6 {
+            position: relative;
+          }
+          .dropdown7 {
+            position: relative;
+          }
+          .dropdown8 {
+            position: relative;
+          }
+          .dropbtn {
+            background-color: #f5f5f5;       
+            font-size: 14px;
+            border: none;
+            background-image: url(http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/_patterns/default/grain3.png);
+          }
+          .compare {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            padding: 10px;
+            border: none;
+            background-image: url(http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/_patterns/default/grain3.png);
+          }
+          .cart {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            padding: 10px;
+            border: none;
+            background-image: url(http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/_patterns/default/grain3.png);
+          }
+          .women {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            border: none;
+          }
+          .fashion {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            border: none;
+          }
+          .electronics {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            border: none;
+          }
+          .digital {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            border: none;
+          }
+          .custom {
+            background-color: #f5f5f5;       
+            font-size: 15px;
+            border: none;
+          }        
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .compare-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .cart-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .women-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .fashion-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .electronics-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .digital-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          .custom-content {
+            display: none;
+            position: absolute;
+            background-color: #f5f5f5;
+            z-index: 1;
+          }
+          
+          .compare-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          .cart-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          .women-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          .fashion-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          .electronics-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          .digital-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          .custom-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          
+          
+          
+          
+          .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            font-size:14px;
+          }
+          
+          .dropdown-content a:hover {background-color: white;}
+          
+          .dropdown:hover .dropdown-content {display: block;}
+          
+          .dropdown:hover .dropbtn {background-color: white;}
+          //Drop 2 Compare
+          .compare-content a:hover {background-color: white;}
+          
+          .dropdown2:hover .compare-content {display: block;}
+          
+          .dropdown2:hover .compare {background-color: white;}
+          //Drop 3 Cart
+          .cart-content a:hover {background-color: white;}
+          
+          .dropdown3:hover .cart-content {display: block;}
+          
+          .dropdown3:hover .cart {background-color: white;}
+          //Dropdown 4 Women
+          .women-content a:hover {background-color: white;}
+          
+          .dropdown4:hover .women-content {display: block;}
+          
+          .dropdown4:hover .women {background-color: #f55856; }
+          //Dropdown 5 Fashion
+          .fashion-content a:hover {background-color: white;}
+          
+          .dropdown5:hover .fashion-content {display: block;}
+          
+          .dropdown5:hover .fashion {background-color: #f55856; }
+          //Dropdown 6 Eletronics
+          .electronics-content a:hover {background-color: white;}
+          
+          .dropdown6:hover .electronics-content {display: block;}
+          
+          .dropdown6:hover .electronics {background-color: #f55856; }
+          //Dropdown 7 Digital
+          .digital-content a:hover {background-color: white;}
+          
+          .dropdown7:hover .digital-content {display: block;}
+          
+          .dropdown7:hover .digital {background-color: #f55856; }
+          //Dropdown 8 Digital
+          .custom-content a:hover {background-color: white;}
+          
+          .dropdown8:hover .custom-content {display: block;}
+          
+          .dropdown8:hover .custom {background-color: #f55856; }
+          .dropdown-content {
+            position: absolute;
+            top: 77%;
+            left: -67px;
+            z-index: 4000;
+            padding: 20px;
+            min-width: 130px;
+            line-height: 1.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+        }
+        .compare-content {
+            position: absolute;
+            top: 107%;
+            left: -230px;
+            z-index: 4000;
+            padding: 25px;
+            min-width: 280px;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+        }
+        .cart-content {
+            position: absolute;
+            top: 107%;
+            left: -254px;
+            z-index: 4000;
+            padding: 25px;
+            min-width: 280px;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+        }
+        .women-content {
+            position: absolute;
+            top: 48px;
+            left: 95px;
+            z-index: 4000;
+            padding: 25px;
+            min-width: 280px;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+            border-top: 4px solid #f55856;
+        }
+        .fashion-content {
+            position: absolute;
+            top: 48px;
+            left: 0px;
+            z-index: 4000;
+            padding: 288px;
+            min-width: 280px;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+            border-top: 4px solid #f55856;
+        }
+        .electronics-content {
+            position: absolute;
+            top: 48px;
+            left: 0px;
+            z-index: 4000;
+            padding: 0%;
+            min-width: 100%;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+            border-top: 4px solid #f55856;
+        }
+        .digital-content {
+            position: absolute;
+            top: 48px;
+            left: 383px;
+            z-index: 4000;
+            padding: 0%;
+            min-width: 30%;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+            border-top: 4px solid #f55856;
+        }
+        .custom-content {
+            position: absolute;
+            top: 48px;
+            z-index: 4000;
+            padding: 0%;
+            min-width: 100%;
+            line-height: 2.5em;
+            text-align: left;
+            list-style: none;
+            background-color: white;
+            border-top: 4px solid #f55856;
+        }

@@ -1,0 +1,99 @@
+img.img-banner {
+    width: 210px;
+    height: 125px;
+    margin-left: 15px;
+}
+img.img-banner2 {
+    width: 210px;
+    height: 125px;
+    margin-left: 15px;
+}
+img.img-banner3 {
+    width: 439px;
+    height: 125px;
+    margin-left: 15px;
+}
+img.img-banner2:hover {
+    opacity: 0.5;
+}
+img.img-banner:hover {
+    opacity: 0.5;
+}
+img.img-banner3:hover {
+    opacity: 0.5;
+}
+.icon-banner{
+    border-radius: 50%;
+    width: 140px;
+    height: 40px;
+    background-color: #f55856;
+    text-align: center;
+    margin-top: 0;
+    line-height: 2.4em;
+    margin-left: 15px;
+    margin-top: 15px;
+    }
+    .icon-banner:hover{
+        background-color: orange;
+    }
+    .second-banner {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .first-banner {
+        text-align: center;
+    }
+    i.fas.fa-anchor{
+    border-radius: 50%;
+    width: 120px;
+    height: 40px;
+    background-color: #f55856;
+    text-align: center;
+    margin-top: 0;
+    line-height: 2.4em;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: white;
+}
+i.fas.fa-gift{
+    border-radius: 50%;
+    width: 120px;
+    height: 40px;
+    background-color: #f55856;
+    text-align: center;
+    margin-top: 0;
+    line-height: 2.4em;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: white;
+}
+i.fas.fa-feather-alt{
+    border-radius: 50%;
+    width: 120px;
+    height: 40px;
+    background-color: #f55856;
+    text-align: center;
+    margin-top: 0;
+    line-height: 2.4em;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: white;
+}
+i.fas.fa-clock{
+    border-radius: 50%;
+    width: 120px;
+    height: 40px;
+    background: #f55856;
+    text-align: center;
+    margin-top: 0;
+    line-height: 2.4em;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: white;
+}
+.about-second {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+

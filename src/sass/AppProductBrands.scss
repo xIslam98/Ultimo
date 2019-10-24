@@ -1,0 +1,58 @@
+img.img-slide-brand {
+    width: 209px;
+    margin-left: 10px;
+}
+button.buttonBack___1mlaL.carousel__back-button.back-brand{
+    width: 30px;
+    background: lightgrey;
+    height: 32px;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    float: right;
+    position: relative;
+    top: -75px;
+    border: 0;
+    margin-right: 0.3%;
+}
+button.buttonNext___2mOCa.carousel__next-button.go-brand {
+      width: 30px;
+      background: lightgrey;
+      height: 32px;
+      display: inline-flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      float: right;
+      position: relative;
+      top: -75px;
+      border: 0;
+      margin-right: 2%;
+  }
+
+ul.ul-brand{
+    list-style: none;
+
+}
+li.li-brand1 {
+    padding: 15px;
+    font-size: 15px;
+    display: inline;
+    float: left;
+    position: relative;
+    bottom: 15px;
+}
+li.li-brand2 {
+    float: right;
+    margin-right: 1%;
+    font-size: 15px;
+    display: inline;
+    position: relative;
+    bottom: 15px;
+    padding:15px;
+}
+li.li-brand1:hover{
+    background-color:#f55856 ;
+}
+li.li-brand2:hover{
+    background-color:#f55856 ;
+}
