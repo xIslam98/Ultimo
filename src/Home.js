@@ -61,7 +61,7 @@ function Home(){
                                 <span className="cart"><img className="cart-logo" src={cart}></img>Cart</span>
                                 <span className="cart-content"><a href="#">You Have no items to compare</a></span>
                             </span>
-                            <input id="search" type="text" maxLength="128"></input><button type submit title="search" className="search"><img className="search-img" src={search}></img></button>
+                            <div className="wrap-search"><input id="search" type="text" maxLength="128"></input><button type submit title="search" className="search"><img className="search-img" src={search}></img></button></div>
                         </div>
                     </div>
                 </div>
@@ -197,6 +197,7 @@ function Home(){
                                     <li className="electronics-5"> Links</li>  
                                 </ul> 
                             </div>
+                            <span class="section-line"></span>
                             <div className="img-rotate">
                                 <div className="board">
                                     <img className="image-rot" src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/other/menu/02.jpg"></img> 
