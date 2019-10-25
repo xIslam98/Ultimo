@@ -1,0 +1,252 @@
+.regroup-feature {
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+i.fas.fa-plane {
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+i.fas.fa-phone-square-alt{
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+i.fas.fa-sync-alt{
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+i.fas.fa-star-half-alt{
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.Feature-sample-fashion {
+    width: 39.67%;
+    margin-left: 2%;
+}
+p.p-feature {
+    font-size: 14px;
+}
+.regroup {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.price {
+    color: grey;
+    font-size: 25px;
+}
+.regroup2{
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.stock {
+    color: grey;
+    font-size: 14px;
+}
+button.add-to-cart {
+    line-height: 55px;
+    font-size: 16px;
+    width: 70%;
+    background: #f55856;
+    color: white;
+    border: 0;
+    cursor:pointer;
+}
+button.add-to-cart:hover{
+    background-color: orange;
+}
+.zoomed-image {
+    background-size: cover;
+    cursor: pointer;
+ }
+ .img-feature {
+    position: relative;
+    display: flex;
+    height: 357px;
+}
+.zoom2-flex {
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+}
+.img-feature {
+    border: 1px solid #eee;
+    padding: 5px;
+}
+input.qty {
+    width: 70px;
+    height: 55px;
+    text-align: center;
+}
+button.Zoom {
+    border: 0;
+    padding: 15px;
+    background: #eee;
+}
+.regroup4 {
+    display: flex;
+    flex-flow: column;
+}
+.regroup3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+i.fas.fa-angle-up {
+    background: #eee;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+i.fas.fa-angle-down {
+    background: #eee;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+.white {
+    background: white;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+}
+
+.black {
+    background: black;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #eee;
+    padding: 1px;
+    cursor:pointer;
+}
+.size-s {
+    background: #eee;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    padding: 1px;
+    text-align: center;
+    justify-content: center;
+    display:flex;
+    cursor:pointer;
+}
+.size-m {
+    background: #eee;
+    border: 1px solid white;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    padding: 1px;
+    margin-left: 1px;
+    text-align: center;
+    justify-content: center;
+    display:flex;
+    cursor:pointer;
+}
+.wishlist-inline {
+    display: flex;
+}
+i.fas.fa-cubes {
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.wishlist2 {
+    display: flex;
+    align-items: center;
+}
+i.fas.fa-share-alt {
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+i.fas.fa-heart {
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+div#accordion__heading-0:hover {
+    color: #f55856;
+    transition: .5s;
+}
+p.para-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+div#accordion__heading-0 {
+    cursor: pointer;
+}
+.accordion {
+    width: 85%;
+    margin: 2%;
+}
+.related {
+    width: 10%;
+    margin-top: 0px;
+}

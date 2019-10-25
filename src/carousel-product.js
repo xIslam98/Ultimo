@@ -1,6 +1,7 @@
 import React from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import { Link } from 'react-router-dom';
 
 export default class SliderFeature extends React.Component {
   render() {
@@ -14,16 +15,16 @@ export default class SliderFeature extends React.Component {
         <ButtonNext className="go-feature"> &rarr; </ButtonNext>
         <ButtonBack className="back-feature"> &#8592; </ButtonBack>   
         <Slider>
-          <Slide index={0}><img className="img-slide2" src="http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1f.jpg"></img> 
+          <Slide index={0}> <Link to="/Feature-cell"><img className="img-slide2" src="http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1f.jpg"></img> 
           <div className="img-0-slide">Sample Fashion Product</div> 
-          <span className="img-0-slide">$50.00</span>
+          <span className="img-0-slide">$50.00</span></Link>
           </Slide>      
-          <Slide index={1}><div className="image-slides"><img className="img-slide2" src="http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1a_8.jpg"></img>
+          <Slide index={1}><div className="image-slides"><Link  to="/Feature-cell"><img className="img-slide2" src="http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1a_8.jpg"></img>
           <span className="sticker-wrapper top-right">
                     <span className="sticker sale">
                         Sale 
                     </span>
-            </span>
+            </span></Link>
           </div>
           <div className="img-0-slide">Product With Custom Options</div> 
           <span className="img-1-price">$100.00</span>
