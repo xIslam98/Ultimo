@@ -10,9 +10,27 @@ import SliderPhone from './carousel-phone';
 import SliderBrand from './carousel-brand';
 import './font-awesome/css/brands.css';
 import './font-awesome/css/solid.css';
-import './font-awesome/css/all.css'
+import './font-awesome/css/all.css';
+import axios from 'axios';
 
-function Home(){
+export default class Home extends Component{
+    constructor (props) {
+        super(props)
+        this.state = {
+            data: "undefined"
+        }
+    }
+componentDidMount () {
+    axios.get('http://127.0.0.1:7000/menu')
+    .then((response) => {
+  this.data = response.data;
+  console.log(this.data)
+  this.setState({data: response.data});
+  });
+}
+ 
+render(){
+if (this.state.data[0].title !== undefined) {
     return(
     <div>
         <div className="body">
@@ -23,32 +41,21 @@ function Home(){
                         <span class="section-line2"></span>
                     </div>
                     <div className="customizable">
-                   
-                        <i class="fas fa-paint-roller"></i>
-                        <div className="icon1-contenent">
-                            <h6 className="title-h6" >Customizable Design</h6>
-                            <h3 className="title-h3">Unlimited Colors</h3>
-                            <p>You have never seen so many options! Change colors of dozens of elements, apply textures, upload background images...</p>
-                            <a className="paraf-custom2">See all features</a>
-
-                        </div>
-                        <i class="fas fa-mobile-alt"></i>
-                        <div className="icon1-contenent">
-                            <h6 className="title-h6" >12-COLUMN GRID</h6>
-                            <h3 className="title-h3" >Responsive Layout</h3>
-                            <p>Ultimo can be displayed on any screen. It is based on fluid grid system. If screen is resized, layout will be automatically adjusted..</p>
-                            <a className="paraf-custom2">See all features</a>
-
-                        </div>
-                        <i class="fas fa-star"></i>
-                        <div className="icon1-contenent">
-                            <h6 className="title-h6">CONTENT PLACEHOLDERS</h6>
-                            <h3 className="title-h3" >50+ CMS blocks</h3>
-                            <p>You can use content placeholders to display custom content in almost every part of the store. Import sample CMS blocks from the demo...</p>
-                            <a className="paraf-custom2">See all features</a>
-
-                        </div>
-
+                    {
+                                        this.state.data[7].submenu.map((mater,index)=>{  
+                                        return(    <span key={index} className="customizable-span">
+                                                    <i  className={this.state.data[7].submenu[index].id}></i>
+                                                    <div className="icon1-contenent">   
+                                                        <h6 className="title-h6">{this.state.data[7].submenu[index].title_h6}</h6>
+                                                        <h3 className="title-h3">{this.state.data[7].submenu[index].title_h3}</h3>
+                                                        <p>{this.state.data[7].submenu[index].paragraph}</p>
+                                                        <a className="paraf-custom2">{this.state.data[7].submenu[index].subparagraph}</a>
+                                                        </div>
+                                                    </span>
+                                                    
+                                                )
+                                            })
+                                        }        
                     </div>
                     <div className="featured-product"> 
                     <span className="featured-our">Our Featured Products</span>
@@ -71,36 +78,21 @@ function Home(){
                             </div>
                             <div className="second-banner">
                                 <div className="customizable">                  
-                                <i class="fas fa-anchor"></i>
-                                    <div className="icon-banner-contenent">
-                                        <h6 className="title-h6" >SECONDARY HEADING</h6>
-                                        <h3 className="title-h3">Sample Heading</h3>
-                                        <p>Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit rory solare de equis.</p>
-                                        <a className="paraf-custom2">Read More ></a>
-
-                                    </div>
-                                    <i class="fas fa-gift"></i>
-                                    <div className="icon1-banner-contenent">
-                                        <h6 className="title-h6" >SECONDARY HEADING</h6>
-                                        <h3 className="title-h3" >Feature Title</h3>
-                                        <p>Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit sed scelerisque quis.</p>
-                                        <a className="paraf-custom2">Read More ></a>
-
-                                    </div>
-                                    <i class="fas fa-feather-alt"></i>
-                                    <div className="icon1-banner-contenent">
-                                        <h6 className="title-h6">SECONDARY HEADING</h6>
-                                        <h3 className="title-h3" >Sample Titles</h3>
-                                        <p>Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit sed scelerisque quis.</p>
-                                        <a className="paraf-custom2">Read More > </a>
-                                    </div>
-                                    <i class="fas fa-clock"></i>
-                                    <div className="icon1-banner-contenent">
-                                        <h6 className="title-h6">SECONDARY HEADING</h6>
-                                        <h3 className="title-h3" >Feature Title</h3>
-                                        <p>Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit sed scelerisque quis.</p>
-                                        <a className="paraf-custom2">Read More > </a>
-                                    </div>
+                                {
+                                        this.state.data[10].submenu.map((mater,index)=>{  
+                                        return(    <span key={index} className="customizable-span">
+                                                    <i  className={this.state.data[10].submenu[index].id}></i>
+                                                    <div className="icon1-contenent">   
+                                                        <h6 className="title-h6">{this.state.data[10].submenu[index].title_h6}</h6>
+                                                        <h3 className="title-h3">{this.state.data[10].submenu[index].title_h3}</h3>
+                                                        <p>{this.state.data[10].submenu[index].paragraph}</p>
+                                                        <a className="paraf-custom2">{this.state.data[10].submenu[index].subparagraph}</a>
+                                                        </div>
+                                                    </span>
+                                                    
+                                                )
+                                            })
+                                    }       
                                 </div>
                             </div>
                         </div>
@@ -115,13 +107,20 @@ function Home(){
                         </div>
                         <div className="link-brand">
                             <ul className="ul-brand">
-                                <li className="li-brand1">Site Map</li>
-                                <li className="li-brand1">Search Terms</li>
-                                <li className="li-brand1">Advanced Search</li>
-                                <li className="li-brand1">Orders and Returns</li>
-                                <li className="li-brand1">Contact Us</li>
-                                <li className="li-brand2">Custom Service</li>
-                                <li className="li-brand2">About Us</li>
+                            {
+                                        this.state.data[12].submenu.map((mater,index)=>{  
+                                        return(    <span key={index} >
+                                                        { this.state.data[12].submenu[index].right
+                                                                ? 
+                                                                <li className="li-brand2">{this.state.data[12].submenu[index].title}</li>
+                                                                :
+                                                                <li className="li-brand1">{this.state.data[12].submenu[index].title}</li>
+                                                        }
+                                                    </span>
+                                                    
+                                                )
+                                            })
+                                    }  
                             </ul>
                         </div>
                     </div>
@@ -130,6 +129,8 @@ function Home(){
             </div>
         </div>                     
     )
-}export default Home;
+}else{return(<div>  </div>)}
+}
+}
 
 

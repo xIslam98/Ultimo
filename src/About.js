@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import './font-awesome/css/brands.css';
 import './font-awesome/css/solid.css';
-import './font-awesome/css/all.css'
-function About(){
+import './font-awesome/css/all.css';
+import axios from 'axios';
+export default class About extends Component{
+    constructor (props) {
+            super(props)
+            this.state = {
+                data: "undefined"
+            }
+        }
+    componentDidMount () {
+        axios.get('http://127.0.0.1:7000/menu')
+        .then((response) => {
+      this.data = response.data;
+      console.log(this.data)
+      this.setState({data: response.data});
+      });
+    }
+    render(){
+        if (this.state.data[0].title) {
+        
     return(
 <div className="back-about">
                     <div className="about">
@@ -17,15 +35,14 @@ function About(){
                                         <div className="about-2">
                                             <div className="about-title"> Theme Features </div>
                                             <ul className="about-list">
-                                                <li className="about-list-element"><span className="movement">></span>Theme Features</li>
-                                                <li className="about-list-element"><span className="movement">></span>Typography</li>
-                                                <li className="about-list-element"><span className="movement">></span>Image Banners</li>
-                                                <li className="about-list-element"><span className="movement">></span>Font Icons</li>
-                                                <li className="about-list-element"><span className="movement">></span>Grid System</li>
-                                                <li className="about-list-element"><span className="movement">></span>Responsive Utilities</li>
-                                                <li className="about-list-element"><span className="movement">></span>Banner Slideshow</li>
-                                                <li className="about-list-element"><span className="movement">></span>Follow Us On Twitter</li>
-                                                <li className="about-list-element"><span className="movement">></span>Magento Themes</li>                                             
+                                            {
+                                                this.state.data[13].submenu.map((mater,index)=>{
+                                                 return(                 
+                                                    <li className="about-list-element"><span className="movement">></span>{this.state.data[13].submenu[index].title}</li>                        
+                                                 )
+                                                })
+                                        }
+                                                                             
                                             </ul>
                                         </div>
                                         <div className="about-3">
@@ -67,4 +84,6 @@ function About(){
                     </div>
                 </div>
     )
-}export default About;
+    }else{return <div></div>}
+}
+}

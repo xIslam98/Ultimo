@@ -5,15 +5,20 @@ import './font-awesome/css/all.css';
 import ContentZoom from 'react-content-zoom';
 import {Accordion,AccordionItem,AccordionItemHeading,AccordionItemPanel,AccordionItemButton} from 'react-accessible-accordion';
 import Related from './carousel-related';
+import Shoes from './carousel-shoes'
+import axios from 'axios';
  
 let tempo;
+
+
 export default class Feature extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
             s: 1,
             color: "",
-            size: ""
+            size: "",
+            data: "undefined"
           }
           this.select = this.select.bind(this)
           this.addNumber = this.addNumber.bind(this)
@@ -21,6 +26,14 @@ export default class Feature extends React.Component {
           this.changeColor = this.changeColor.bind(this)
           this.changesize = this.changesize.bind(this)
         }
+    componentDidMount () {
+        axios.get('http://127.0.0.1:7000/menu')
+        .then((response) => {
+      this.data = response.data;
+      console.log(this.data)
+      this.setState({data: response.data});
+      });
+    }
         addNumber(){
             tempo=this.state.s+1
             this.setState({s: tempo})
@@ -48,14 +61,18 @@ export default class Feature extends React.Component {
                 }
         }
     render() {
+        // eslint-disable-next-line no-restricted-globals
+        const  dataindex = location.search.split("=");
+        if(this.state.data[0].title){
       return(
           <div>
               <div className="back">
                   <div className="regroup-feature">
                       <div className="img-feature">
-                      <div className="zoom1-flex"><ContentZoom zoomPercent={350}
-                            largeImageUrl="http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/image/650x/040ec09b1e35df139433887a97daa66f/m/o/model1a_1.jpg" class="cloud-zoom product-image-gallery"
-                            imageUrl="http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/image/650x/040ec09b1e35df139433887a97daa66f/m/o/model1a_1.jpg" class="cloud-zoom product-image-gallery"
+                      <div className="zoom1-flex">
+                    <ContentZoom zoomPercent={350}
+                            largeImageUrl={this.state.data[8].submenu[dataindex[1]].image} class="cloud-zoom product-image-gallery"
+                            imageUrl={this.state.data[8].submenu[dataindex[1]].image} class="cloud-zoom product-image-gallery"
                             contentHeight={357}
                             contentWidth={268} />
                       </div>
@@ -64,7 +81,7 @@ export default class Feature extends React.Component {
                       </div>
                       </div>
                       <div className="Feature-sample-fashion">
-                          <h2 className="feature-h2">Sample Fashion Product</h2>
+                          <h2 className="feature-h2">{this.state.data[8].submenu[dataindex[1]].title}</h2>
                           <div className="align-stars">
                                 <div className="rating-box">
                                     <div className="rating"></div>             
@@ -103,7 +120,7 @@ export default class Feature extends React.Component {
                             </AccordionItem>
                             </Accordion>
                            <div className="regroup2">
-                             <div className="price">$ 50.00</div>
+                             <div className="price">{this.state.data[8].submenu[dataindex[1]].price}$</div>
                              <div className="stock">Avaibility:In Stock</div>  
                            </div>
                            <div>Color: {this.state.color}</div>
@@ -149,6 +166,7 @@ export default class Feature extends React.Component {
                   </div>
                   <div className="feature-second-part">
                       <div className="regroup">
+                          <div className="accordion-shoes">
                           <div className="accordion">
                   <Accordion>
                     <AccordionItem>
@@ -257,6 +275,12 @@ Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit s
                         </AccordionItemPanel>
                     </AccordionItem>
                 </Accordion>
+                <div className="related-carousel-shoes">
+                <h1 className="shoes-title">You may also be interested in the following product(s)</h1>
+                <span className="section-line"></span>
+                <Shoes />
+                </div>
+                </div>
                 </div>
                 <div className="related">
                     <span>Related</span><span className="section-line"></span>
@@ -267,5 +291,6 @@ Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit s
               </div>
           </div>
       )
+    }else{return <div> </div>}
     }
 }

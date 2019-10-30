@@ -6,9 +6,11 @@ import Footer from './Footer';
 import About from './About';
 import Feature from './Feature';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import axios from 'axios';
+import Shirt from './Shirt'
 
 export default class App extends Component {
-    render(){
+ render(){
         return (
             <Router>
         <div className="principal">
@@ -22,6 +24,9 @@ export default class App extends Component {
                     <Feature />                   
                     </Route>
                     <Route path="/Store-Cell" > 
+                    </Route>
+                    <Route path="/Shirt" >
+                        <Shirt /> 
                     </Route>
                 <About />
                 <Footer />  

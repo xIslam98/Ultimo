@@ -2,6 +2,7 @@
     display: flex;
     margin-left: 2%;
     margin-right: 2%;
+  justify-content: space-between;
 }
 i.fas.fa-plane {
     border-radius: 50%;
@@ -243,10 +244,43 @@ div#accordion__heading-0 {
     cursor: pointer;
 }
 .accordion {
-    width: 85%;
+    width: 95%;
     margin: 2%;
 }
 .related {
-    width: 10%;
+    width: 30%;
     margin-top: 0px;
+}
+p.related-p {
+    margin: 0;
+    color: grey;
+    font-size: 14px;
+}
+button.slick-arrow.slick-next {
+    position: absolute;
+    top: -7%;
+    right: 5%;
+    background-color: black;
+}
+.related {
+    width: 22%;
+    margin-top: 0px;
+}
+button.slick-arrow.slick-prev {
+    position: absolute;
+    background: black;
+    top: -7%;
+    left: 77%;
+}
+.accordion-shoes {
+    width: 77%;
+}
+h1.shoes-title {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.company-feature {
+    width: 26%;
 }

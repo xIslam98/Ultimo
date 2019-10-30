@@ -1,0 +1,185 @@
+.regroup-pdl {
+    display: flex;
+    align-content: flex-start;
+    margin-top: 10px;
+    flex-flow: row;
+}
+.lateral-bar {
+width: 20%;
+text-align: center;
+}
+.shirt-div{
+    width: 80%;
+    
+}
+.number-item-pdl{
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.para-item-pdl{
+    font-size: 14px;
+    margin-right: 10px;
+}
+.select-item-pdl{
+height: 40px;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    background-image: none;
+    color: #a9a9a9;
+    margin-right: 10px;
+}
+.fas.fa-arrow-up{
+    line-height: 4;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+.option-pdl{
+    display:flex;
+    justify-content: space-between;
+}
+.simple-flex{
+    display:flex;
+}
+i.fas.fa-th-large {
+    margin-right: 10px;
+    line-height: 4;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+i.fas.fa-list {
+    margin-right: 10px;
+    line-height: 4;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+.size {
+    padding: 15px;
+    float: left;
+    display: flex;
+    border-bottom: 1px solid #eee;
+        margin-left: 15px;
+        margin-right: 15px;
+}
+.div-size {
+    display: flex;
+    flex-flow: column;
+}
+.size:hover {
+    background-color: #5bd2ec;
+    transition: .5s;
+}
+.simple-flex-navbar {
+    display: flex;
+    margin-left: 15px;
+    padding: 10px;
+}
+i.fas.fa-caret-right {
+    line-height: 2;
+    font-size: 10px;
+    margin-right: 20px;
+    color:#eee
+}
+li.price{
+color: black;
+font-size: 14px; 
+}
+.simple-flex-navbar:hover i.fas.fa-caret-right {
+    position: relative;
+    left: 5%;
+    transition: 0.5s;
+}
+.simple-flex-navbar:hover li.price{
+    color: #f55856
+
+}
+.title-navbar-weight{
+    font-weight: 700;
+    width: 77%;
+}
+.white-color {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #eee;
+    background: white;
+}
+.blue-color {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #eee;
+    background: blue;
+}
+.ligthgrey-color {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #eee;
+    background: lightslategrey;
+}
+.grey-color {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #eee;
+    background: grey;
+}
+.black-color {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #eee;
+    background: black;
+}
+.regroup-color{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 40%;
+    margin-left:15px
+}
+.Color-navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+p.parents{
+    color: #bbb;
+}
+.size-color {
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    border: 1px solid darkgrey;
+    line-height: 2;
+}
+.size-color:hover{
+    border: 1px solid black;
+}
+p.custo-top {
+    color: darkgrey;
+}
+p.custo-top:hover{
+    color:black
+}
+.product-plp {
+    width: 25%;
+    display: flex;
+}
+.product {
+    display: flex;
+    flex-wrap: wrap;
+}
+div.simple-flex-shirt:hover span.sticker.sale {
+    width: 70px;
+    height: 70px;
+}
+.simple-flex-shirt {
+    display: flex;
+}
+a {
+    text-decoration: none;
+}

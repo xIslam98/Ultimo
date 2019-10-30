@@ -7,9 +7,63 @@ import homelogo from './homelogo.png';
 import news from './new.png';
 import hot from './hot.png';
 import Carousel from './carousel-item';
-function Header(){
+import axios from 'axios'
+export default class Header extends Component{
+    constructor (props) {
+        super(props)
+        this.state = {
+            data: "undefined"
+        }
+    }
+componentDidMount () {
+    axios.get('http://127.0.0.1:7000/menu')
+    .then((response) => {
+  this.data = response.data;
+  console.log(this.data)
+  this.setState({data: response.data});
+  });
+}
+printFunction(index){
+        if(this.state.data[0].submenu[index].submenu_menu){
+          return (   this.state.data[0].submenu[index].submenu_menu.map((mater,index2)=>{  
+         return(            
+                <div key={index2}>
+                    <li className="women-list2"><span className="movement">></span> {this.state.data[0].submenu[1].submenu_menu[index2].title}</li>
+                </div>
+                )
+            })
+            )
+        }
+}
+printFunction2(index){
+    if(this.state.data[2].submenu[index].submenu_menu){
+      return (   this.state.data[2].submenu[index].submenu_menu.map((mater,index2)=>{  
+     return(            
+            <div key={index2}>
+                <li className="type-list2"><span className="movement">></span> {this.state.data[2].submenu[index].submenu_menu[index2].title}</li>
+            </div>
+            )
+        })
+        )
+    }
+}
+printFunction3(index){
+    if(this.state.data[5].submenu[index].submenu_menu){
+      return (   this.state.data[5].submenu[index].submenu_menu.map((mater,index2)=>{  
+     return(            
+            <div key={index2}>
+                <li className="digit-list2"><span className="movement">></span> {this.state.data[5].submenu[index].submenu_menu[index2].title}</li>
+            </div>
+            )
+        })
+        )
+    }
+}
+
+render(){
+    if (this.state.data[0].title !== undefined) {
     return(
-<div>
+         <div>
     <div className="Header-up">
         <div className="Header">
             <div className="upper">
@@ -60,64 +114,83 @@ function Header(){
     <div className="back">
     <div className="navbar">
                         <ul className="navbar">
-                            <li><a className="home-navbar" href="#home"><img className="home-logo" src={homelogo}></img>Home</a></li>                                
+                            <li><a className="home-navbar" href="http://localhost:3000/"><img className="home-logo" src={homelogo}></img>Home</a></li>                                
                                 <li className="dropdown4">
-                                    <a className="women">Women</a>
+                                    <a className="women">{this.state.data[0].title}</a>
                                 <div className="women-content">
                                     <div className="women-low" >
-                                        <a className="women1">Sunglasses</a>
-                                        <a className="women1">Shirt & Tops</a>
-                                        <ul className="women-list">
-                                            <li className="women-list2"><span className="movement">></span> Size - Small</li>
-                                            <li className="women-list2"> <span className="movement">></span> Size - Medium</li>
-                                            <li className="women-list2"> <span className="movement">></span> Size - Large</li>
-                                        </ul>
-                                        <a className="women1"> Designer Tops</a>
-                                        <a className="women1"> Blouses </a>
-                                        <a className="women1"> Sock & Thights</a>
-                                        <a className="women1"> Going Out</a>
-                                        <a className="women1"> Party </a>
+                                        {
+                                        this.state.data[0].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <div key={index}>
+                                                    <a className="women1">{this.state.data[0].submenu[index].title}</a>
+                                                    {this.state.data[0].submenu[index].submenu_menu !== "undefined"  ?    <ul className="women-list"> {this.printFunction(index)} </ul> : console.log("nulla")}
+                                                </div>                             
+                                                 )
+                                                })
+                                        }
                                     </div>
                                     <div className="img-women"><img className="img-women2" src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/other/menu/01.jpg"></img> 
                                     <img className="img-gift" src=" https://icon-library.net/images/search-icon-white-png/search-icon-white-png-11.jpg"></img> </div>
                                 </div>                                   
                             </li>                                          
                             <li className="dropdown5" >
-                            <a className="fashion"><img className="img-new" src={news} ></img>Fashion</a>
+                            <a className="fashion"><img className="img-new" src={news} ></img>{this.state.data[1].title}</a>
                         <div className="fashion-content">
                             < div className="adjust">
-                                <a className="fashion1"> <img className="img-new2" src={hot}></img>  Tops</a>
+                                <a className="fashion1"> <img className="img-new2" src={hot}></img> {this.state.data[1].submenu[0].title}</a>
                                     <ul className="list-fashion1">
-                                        <li className="women-list2"><span className="movement">></span>Casual Tops</li>
-                                        <li className="women-list2"> <span className="movement">></span> Shirts</li>
-                                        <li className="women-list2"> <span className="movement">></span> Tunics</li>
-                                        <li className="women-list2"> <span className="movement">></span> Vest</li>
+                                    {
+                                        this.state.data[1].submenu[0].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[0].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                     </ul>
                             </div>
                             <div className ="adjust-bags">
-                                <a className="fashion1"> <img className="img-new2" src={hot}></img>  Bags</a>
+                                <a className="fashion1"> <img className="img-new2" src={hot}></img>  {this.state.data[1].submenu[1].title}</a>
                                     <ul className="list-fashion1">
-                                        <li className="women-list2"><span className="movement">></span>Designer Bags</li>
-                                        <li className="women-list2"> <span className="movement">></span> Handbags</li>
-                                        <li className="women-list2"> <span className="movement">></span> Purses</li>
-                                        <li className="women-list2"> <span className="movement">></span> Shoulder Bags</li>
+                                    {
+                                        this.state.data[1].submenu[1].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[1].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                     </ul>
                             </div>
                             <div className ="adjust-shoes"> 
-                                <a className="fashion1"> <img className="img-new2" src={news} ></img> Shoes</a>
+                                <a className="fashion1"> <img className="img-new2" src={news} ></img> {this.state.data[1].submenu[2].title}</a>
                                 <ul className="list-fashion1">
-                                                <li className="women-list2"><span className="movement">></span>Flat Shoes</li>
-                                                <li className="women-list2"> <span className="movement">></span> Flat Sandals</li>
-                                                <li className="women-list2"> <span className="movement">></span> Boots</li>
-                                                <li className="women-list2"> <span className="movement">></span> Heels</li>
+                                {
+                                        this.state.data[1].submenu[2].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[2].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                             </ul>
                             </div>    
                             <div className ="adjust-jewlery"> 
-                                <a className="fashion1">Jewlery</a>
+                                <a className="fashion1">{this.state.data[1].submenu[3].title}</a>
                                 <ul className="list-fashion1">
-                                                <li className="women-list2"><span className="movement">></span>Bracelets</li>
-                                                <li className="women-list2"> <span className="movement">></span> Necklaces & Pendants</li>
-                                                <li className="women-list2"> <span className="movement">></span> Pins & Brooches</li>
+                                {
+                                        this.state.data[1].submenu[3].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[3].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                             </ul>
                              </div>   
                                 <div className="adjust-recommended">
@@ -127,39 +200,59 @@ function Header(){
                                                </div>
                                 </div> 
                                 <div className ="adjust-dresses"> 
-                                <a className="fashion1">Dresses</a>
+                                <a className="fashion1">{this.state.data[1].submenu[4].title}</a>
                                 <ul className="list-fashion1">
-                                                <li className="women-list2"><span className="movement">></span>Casual Dresses</li>
-                                                <li className="women-list2"> <span className="movement">></span> Evenening</li>
-                                                <li className="women-list2"> <span className="movement">></span> Designer</li>
-                                                <li className="women-list2"> <span className="movement">></span> Party</li>
+                                {
+                                        this.state.data[1].submenu[4].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[4].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                             </ul>
                              </div>
                              <div className ="adjust-lingerie"> 
-                                <a className="fashion1">Lingerie</a>
+                                <a className="fashion1">{this.state.data[1].submenu[5].title}</a>
                                 <ul className="list-fashion1">
-                                                <li className="women-list2"><span className="movement">></span>Bras</li>
-                                                <li className="women-list2"> <span className="movement">></span>Bodies</li>
-                                                <li className="women-list2"> <span className="movement">></span> Lingerie Sets</li>
-                                                <li className="women-list2"> <span className="movement">></span> Shapewear</li>
+                                {
+                                        this.state.data[1].submenu[5].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[5].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                             </ul>
                              </div>
                              <div className ="adjust-jackets"> 
-                                <a className="fashion1">Jackets</a>
+                                <a className="fashion1">{this.state.data[1].submenu[6].title}</a>
                                 <ul className="list-fashion1">
-                                                <li className="women-list2"><span className="movement">></span>Coats</li>
-                                                <li className="women-list2"> <span className="movement">></span> Jackets</li>
-                                                <li className="women-list2"> <span className="movement">></span> Leather Jackets</li>
-                                                <li className="women-list2"> <span className="movement">></span> Blazers</li>
+                                {
+                                        this.state.data[1].submenu[6].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[6].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                             </ul>
                              </div>  
                              <div className ="adjust-swimwear"> 
-                                <a className="fashion1">Swimwear</a>
+                                <a className="fashion1">{this.state.data[1].submenu[7].title}</a>
                                 <ul className="list-fashion1">
-                                                <li className="women-list2"><span className="movement">></span>Swimsuits</li>
-                                                <li className="women-list2"> <span className="movement">></span> Beach</li>
-                                                <li className="women-list2"> <span className="movement">></span> Clothing</li>
-                                                <li className="women-list2"> <span className="movement">></span> Bikinis</li>
+                                {
+                                        this.state.data[1].submenu[7].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index2}>
+                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[7].submenu_menu[index2].title}</li>
+                                                </div>
+                                                )
+                                            })
+                                    }
                                             </ul>
                              </div> 
                              <div className="Features"> 
@@ -173,7 +266,7 @@ function Header(){
                             </div>                       
                             </li>
                             <li className="dropdown6">
-                            <a className="electronics">Electronics</a>
+                            <a className="electronics">{this.state.data[2].title}</a>
                             <div className="electronics-content">
                             <div className="electronics-reco"> 
                                 <ul className="electronics-list">
@@ -214,67 +307,59 @@ function Header(){
                                 <div className="lowest">
                                 <a className="title-list">Phone & Tablets</a>
                                     <ul className="types-list">
-                                        <li className="type-list2"><span className="movement">></span>Sample</li>
-                                        <li className="type-list2" ><span className="movement">></span>Samsung</li>
-                                        <li className="type-list2" ><span className="movement">></span>Apple</li>
-                                            <ul>
-                                                <li className="type-list2"><span className="movement">></span>iPhone 3GS</li>
-                                                <li className="type-list2"><span className="movement">></span>iPhone 4</li>
-                                                <li className="type-list2"><span className="movement">></span>iPhone 4S</li>
-                                                <li className="type-list2"><span className="movement">></span>iPhone 5</li>
-                                                <li className="type-list2"><span className="movement">></span>iPad Retina</li>
-                                                <li className="type-list2"><span className="movement">></span>iPad Mini</li>
-                                                <li className="type-list2"><span className="movement">></span>iPad Air</li>
-                                            </ul>
-                                            <li className="type-list2" ><span className="movement">></span>Blackberry</li>
-                                            <li className="type-list2" ><span className="movement">></span>Motorola</li>
-                                            <li className="type-list2" ><span className="movement">></span>HTC</li>
-                                            <li className="type-list2" ><span className="movement">></span>Huawei</li>
+                                            {
+                                        this.state.data[2].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <span key={index}>
+                                                    <li className="type-list2"> <span className="movement">></span>{this.state.data[2].submenu[index].title}</li>
+                                                    {this.state.data[2].submenu[index].submenu_menu !== "undefined"  ?   <ul> {this.printFunction2(index)} </ul> : console.log("nulla")}
+                                                 </span>                           
+                                                 )
+                                                })
+                                        }
                                     </ul>
                                     <a className="title-list2">Accessories</a>
                                     <ul className="types-list3">
-                                        <li className="type-list2"><span className="movement">></span>Headsets</li>
-                                        <li className="type-list2" ><span className="movement">></span>Bluetooth Wireless</li>
-                                        <li className="type-list2" ><span className="movement">></span>Earphones</li>
-                                        <li className="type-list2"><span className="movement">></span>Batteries</li>
-                                        <li className="type-list2"><span className="movement">></span>Screen Protectors</li>
-                                        <li className="type-list2"><span className="movement">></span>Memory Cards</li>
-                                        <li className="type-list2"><span className="movement">></span>Cables & Adapters</li>
-                                        <li className="type-list2"><span className="movement">></span>Cleaning Cloth</li>
-                                        <li className="type-list2"><span className="movement">></span>Chargers</li>
-                                        <li className="type-list2"><span className="movement">></span>Cases</li>                            
-                                        <li className="type-list2" ><span className="movement">></span>Covers</li>
-                                        <li className="type-list2" ><span className="movement">></span>Skins</li>
-                                        <li className="type-list2" ><span className="movement">></span>HTC</li>
-                                        <li className="type-list2" ><span className="movement">></span>Huawei</li>
+                                    {
+                                        this.state.data[3].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <span key={index}>
+                                                    <li className="type-list2"><span className="movement">></span>{this.state.data[3].submenu[index].title}</li>
+                                                 </span>                           
+                                                 )
+                                                })
+                                        }
                                     </ul>
                                     <a className="title-list3">Cameras</a>
                                     <ul className="types-list4">
-                                        <li className="type-list2"><span className="movement">></span>Digital Cameras</li>
-                                        <li className="type-list2" ><span className="movement">></span>Camcorders</li>
-                                        <li className="type-list2" ><span className="movement">></span>Lenses</li>
-                                        <li className="type-list2"><span className="movement">></span>Filters</li>
-                                        <li className="type-list2"><span className="movement">></span>Tripods</li>                                   
+                                    {
+                                        this.state.data[4].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <span key={index}>
+                                                    <li className="type-list2"><span className="movement">></span>{this.state.data[4].submenu[index].title}</li>
+                                                 </span>                           
+                                                 )
+                                                })
+                                        }                                 
                                     </ul>
                                 </div>
                                 </div>                        
                             </div>
                             </li>
                             <li className="dropdown7" >
-                                <a className="digital">Digital</a>
+                                <a className="digital">{this.state.data[5].title}</a>
                                 <div className="digital-content">
                                         <div className="digitale">
-                                            <a className="digital-type">eBooks</a>
-                                            <a className="digital-type">Themes</a>
-                                                <ul>
-                                                    <li className="digit-list2"><span className="movement">></span>WordPress</li>
-                                                    <li className="digit-list2" ><span className="movement">></span>Magento</li>
-                                                    <li className="digit-list2" ><span className="movement">></span>OpenCart</li>
-                                                    <li className="digit-list2" ><span className="movement">></span>PrestaShop</li>
-                                                    <li className="digit-list2" ><span className="movement">></span>Drupal</li>
-                                                </ul>
-                                            <a className="digital-type" >Music</a>
-                                            <a className="digital-type" >Software</a>
+                                        {
+                                        this.state.data[5].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <span key={index}>
+                                                    <a className="digital-type"> <span className="movement">></span>{this.state.data[5].submenu[index].title}</a>
+                                                    {this.state.data[5].submenu[index].submenu_menu !== "undefined"  ?   <ul> {this.printFunction3(index)} </ul> : console.log("nulla")}
+                                                 </span>                           
+                                                 )
+                                                })
+                                        }
                                     </div>
                                 </div>
                             </li>
@@ -282,33 +367,27 @@ function Header(){
                                 <a className="custom">Custom</a>
                             <div className="custom-content">
                                 <div className="wrap-custom">
-                                    <div className="title-custom-div">
-                                        <h3 className="title-custom">
-                                        Responsive Magento Theme
-                                        </h3>
-                                        <p className="paraf-custom">
-                                        Ultimo is a premium Magento theme with advanced admin module. It's extremely customizable and fully responsive. Can be used for every type of store.
-                                        </p>
-                                        <p className="paraf-custom2">Buy This Magento Theme</p>
-                                    </div>
-                                    <div className="image-1">
-                                        <img className="image-custom" src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/menu/custom/01.png"></img>
-                                        <h3>50+ CMS blocks</h3>
-                                        <p className="paraf-custom" >You can use CMS blocks as content placeholders to display custom content in almost every part of the store. Import sample CMS blocks from the demo.</p>
-                                        <a className="paraf-custom2" >See All features</a>
-                                    </div>
-                                    <div className="image-2">
-                                        <img  className="image-custom" src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/menu/custom/02.png"></img>
-                                        <h3>190-pages documentation</h3>
-                                        <p className="paraf-custom" >The best Magento theme documentation on ThemeForest. It also describes selected Magento features which you need to know when starting to work with Magento.</p>
-                                        <a className="paraf-custom2" >See All features</a>
-                                    </div>
-                                    <div className="image-3">
-                                        <img className="image-custom" src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/menu/custom/03.png"></img>
-                                        <h3>Easy to customize</h3>
-                                        <p className="paraf-custom" >Use Ultimo as a starting point for your custom projects. Unlike many other themes, Ultimo lets you create multiple custom sub-themes (theme variants) for your clients.</p>
-                                        <a className="paraf-custom2" >See All features</a>
-                                    </div>
+                                {
+                                        this.state.data[6].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <span key={index}>
+                                                    <div className="title-custom-div">
+                                                    {
+                                                    this.state.data[6].submenu[index].image  
+                                                    ?  
+                                                        <div className="image-1">
+                                                        <img className="image-custom" src={this.state.data[6].submenu[index].image}></img>
+                                                        <h3>{this.state.data[6].submenu[index].title}</h3> </div>
+                                                    : 
+                                                        <h3 className="title-custom">{this.state.data[6].submenu[index].title}</h3>                                                  
+                                                    }
+                                                   <p className="paraf-custom">{this.state.data[6].submenu[index].paragraph}</p>
+                                                   <a className="paraf-custom2">{this.state.data[6].submenu[index].subparagraph}</a>
+                                                    </div>
+                                                 </span>                           
+                                                 )
+                                                })
+                                        }
                                 </div>
                             </div>
                             </li>
@@ -318,5 +397,8 @@ function Header(){
                     </div>
     </div>
 </div>
+   
     )
-}export default Header;
+    }else{return(<div>  </div>)}
+}
+}

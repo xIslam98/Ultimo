@@ -5,6 +5,7 @@
 @import './AppFooterFirst.scss';
 @import './AppHeader.scss';
 @import './AppFeature.scss';
+@import './AppShirt.scss';
 body {
             color: #333333;
             background-color: #f5f5f5;
@@ -98,6 +99,7 @@ select:hover{
             margin: -11px;
             font-weight: 600;
             color: grey;
+            width: 100%;
             
         }
         ul.navbar {
@@ -528,6 +530,7 @@ select:hover{
                         margin-left: 22px;
                         font-size: 16px;
                         color: grey;
+                        width: 100%;
                     }
                     a.digital-type:hover{
                         color:#f55856;
@@ -606,8 +609,14 @@ select:hover{
                         width: 96%;
                         margin-left: 19px;
                     }
-                   
-                    button.buttonNext___2mOCa.carousel__next-button:hover {
+                   span.customizable-span
+                    {
+                        display: flex;
+                        flex-flow: column;
+                        width: 100%;
+                        align-items: center;
+                    }
+                   button.buttonNext___2mOCa.carousel__next-button:hover {
                         background: black;
                         color: white;
                         transition: .5s;  
@@ -631,10 +640,9 @@ select:hover{
                     width: 20%;
                     }
                     .icon1-contenent {
-                        width: 20%;
                         margin-left: 14px;
                         margin-top: 0;
-                        font-size:14px
+                        font-size: 14px;
                     }
                     .customizable {
                         display: flex;
@@ -957,6 +965,10 @@ select:hover{
                     display: inline-flex;
                     justify-content: space-around;
                     position: relative;
+                }
+                li.slide___3-Nqo.slideHorizontal___1NzNV.carousel__slide.carousel__slide--visible:hover .sticker {
+                    width: 70px;
+                    height: 70px;
                 }
                
                
