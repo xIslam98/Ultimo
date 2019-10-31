@@ -46,7 +46,7 @@ export default class SliderPhone extends React.Component {
               }
               { this.state.data[9].submenu[index].offer  
               ? 
-              <Link to="/Feature-cell">
+              <Link to={`/Feature-phone?id=${index}`}>
                 <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
                 <span className="sticker-wrapper top-right">
                     <span className="sticker sale">
@@ -58,7 +58,7 @@ export default class SliderPhone extends React.Component {
                   <span className="img-2-offer">{this.state.data[9].submenu[index].offer_price}</span>
                     </Link> 
                :
-               <Link to="/Feature-cell">
+               <Link to={`/Feature-phone?id=${index}`}>
                   <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
                   <div className="img-0-slide">{this.state.data[9].submenu[index].title}</div>
                     { this.state.data[9].submenu[index].low  

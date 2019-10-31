@@ -2,8 +2,9 @@ import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from 'axios'
-export default class Related extends React.Component {
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+export default class Bottombag   extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -22,26 +23,26 @@ export default class Related extends React.Component {
     if (this.state.data[0].title) {
     let settings = {
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: 5,
       slidesToScroll: 1,
-      vertical:true,
-      arrows:true
+      arrows:false
     };
     return (
     <Slider {...settings}>
-       {  this.state.data[15].submenu.map((mater,index)=>{
+      {  this.state.data[15].submenu.map((mater,index)=>{
         return(
-        <div >
-          <div className="regroup">
-          <img className="repixel" src={this.state.data[15].submenu[index].image}>   
-          </img> <span>{this.state.data[15].submenu[index].title} <p className="related-p">{this.state.data[15].submenu[index].price}$</p><p className="related-p">Add to Wishlist</p></span>
+        <Link to={`/Feature-bag?id=${index}`}><div >
+          <div className="regroup4">
+            <img src={this.state.data[15].submenu[index].image}>   
+          </img> <span>{this.state.data[15].submenu[index].title} <p className="related-p">{this.state.data[15].submenu[index].price}$</p></span>
           </div>
-        </div>
-        )
-       })
+        </div></Link>
+          )
+        })
       }
+  
       </Slider>
     );
-    }else{return <div></div>}
+    }else{return<div></div>}
   }
 }

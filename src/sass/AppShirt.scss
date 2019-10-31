@@ -169,10 +169,6 @@ p.custo-top:hover{
     width: 25%;
     display: flex;
 }
-.product {
-    display: flex;
-    flex-wrap: wrap;
-}
 div.simple-flex-shirt:hover span.sticker.sale {
     width: 70px;
     height: 70px;
@@ -183,3 +179,115 @@ div.simple-flex-shirt:hover span.sticker.sale {
 a {
     text-decoration: none;
 }
+.product.list {
+    display: inline;
+}
+.product.list .product-plp {
+    width: 100%;
+}
+.product.list a {
+    display: flex;
+}
+.product.list img.img-slide2 {
+    width: 303px;
+    margin: 20px;
+}
+.adjust-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+.regroup-list2{
+    display: flex;
+    flex-flow: column;
+    width: 64%; 
+}
+.regroup-list{
+    display: flex;
+    justify-content: space-between;
+}
+.contenitor-list{
+    width: 36%;
+}
+.product.list span.img-0-slide{
+    margin-right: 30%;
+    margin-bottom: 10px;
+}
+.product.list button {
+    border: 0;
+    width: 180px;
+    height: 50px;
+    background: #eee;
+    margin-right: 5%;
+}
+.product.list span.img-0-description{
+font-size: 14px;
+width: 66%;
+}
+.regroup2-list {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    align-items: center;flex-flow: column;
+}
+ .product.list .product-plp:hover {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-color: transparent;
+}
+.product-plp:hover {
+    margin-left: 0%;
+    margin-right: 2%;
+    padding-left: -3%;
+
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+    width: 20%;
+}
+.product.list button:hover{
+    background-color: orange;
+}
+.link-list{
+    font-size:14px;
+}
+.link-list:hover{
+    color:red;
+}
+.product.list span.img-2-offer{
+    margin-right: 7%;
+}
+span.img-0-slide{
+text-align: center;
+    display: block; 
+}
+a{
+    color:black;
+}
+button.hover-apparence {
+    border: 0;
+    background: #eee;
+    width: 87px;
+    height: 45px;
+    margin-bottom: 5%;
+    display: none;
+}
+.product-plp:hover button.hover-apparence {
+    display: block;
+}
+.simple-flex2{
+flex-flow: column;
+justify-content: center;
+align-items: center;  
+display:flex;
+}
+button.hover-apparence:hover{
+    background-color:orange;
+}
+.all-leave{
+ all: unset;   
+}
+

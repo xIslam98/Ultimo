@@ -8,6 +8,7 @@ import news from './new.png';
 import hot from './hot.png';
 import Carousel from './carousel-item';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 export default class Header extends Component{
     constructor (props) {
         super(props)
@@ -123,7 +124,7 @@ render(){
                                         this.state.data[0].submenu.map((mater,index)=>{
                                         return(                 
                                                 <div key={index}>
-                                                    <a className="women1">{this.state.data[0].submenu[index].title}</a>
+                                                    <Link to={`/${this.state.data[0].submenu[index].id}`} className="women1">{this.state.data[0].submenu[index].title}</Link>
                                                     {this.state.data[0].submenu[index].submenu_menu !== "undefined"  ?    <ul className="women-list"> {this.printFunction(index)} </ul> : console.log("nulla")}
                                                 </div>                             
                                                  )
@@ -156,12 +157,14 @@ render(){
                                     <ul className="list-fashion1">
                                     {
                                         this.state.data[1].submenu[1].submenu_menu.map((mater,index2)=>{  
-                                        return(            
+                                        return(   <Link className="all-leave" to={`/${this.state.data[15].submenu[index2].id}`} >        
                                                 <div key={index2}>
                                                     <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[1].submenu_menu[index2].title}</li>
-                                                </div>
+                                                </div>  
+                                                </Link>
                                                 )
                                             })
+                                          
                                     }
                                     </ul>
                             </div>
@@ -170,10 +173,11 @@ render(){
                                 <ul className="list-fashion1">
                                 {
                                         this.state.data[1].submenu[2].submenu_menu.map((mater,index2)=>{  
-                                        return(            
+                                        return(   <Link className="all-leave" to={`/${this.state.data[14].submenu[index2].id}` }>       
                                                 <div key={index2}>
-                                                    <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[2].submenu_menu[index2].title}</li>
+                                                     <li className="women-list2"><span className="movement">></span> {this.state.data[1].submenu[2].submenu_menu[index2].title}</li>
                                                 </div>
+                                                </Link>  
                                                 )
                                             })
                                     }
@@ -309,11 +313,12 @@ render(){
                                     <ul className="types-list">
                                             {
                                         this.state.data[2].submenu.map((mater,index)=>{
-                                        return(                 
+                                        return( 
+                                            <Link className="all-leave" to={`/${this.state.data[9].submenu[index].id}` }>               
                                                 <span key={index}>
                                                     <li className="type-list2"> <span className="movement">></span>{this.state.data[2].submenu[index].title}</li>
                                                     {this.state.data[2].submenu[index].submenu_menu !== "undefined"  ?   <ul> {this.printFunction2(index)} </ul> : console.log("nulla")}
-                                                 </span>                           
+                                                 </span>  </Link>                          
                                                  )
                                                 })
                                         }
@@ -322,10 +327,12 @@ render(){
                                     <ul className="types-list3">
                                     {
                                         this.state.data[3].submenu.map((mater,index)=>{
-                                        return(                 
+                                        return(   
+                                            <Link className="all-leave" to={`/${this.state.data[16].submenu[1].id}` }>
                                                 <span key={index}>
                                                     <li className="type-list2"><span className="movement">></span>{this.state.data[3].submenu[index].title}</li>
-                                                 </span>                           
+                                                    </span>   
+                                                    </Link>                    
                                                  )
                                                 })
                                         }

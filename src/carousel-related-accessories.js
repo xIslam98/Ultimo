@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios'
-export default class Related extends React.Component {
+export default class RelatedAcces extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -29,12 +29,12 @@ export default class Related extends React.Component {
     };
     return (
     <Slider {...settings}>
-       {  this.state.data[15].submenu.map((mater,index)=>{
+       {  this.state.data[16].submenu.map((mater,index)=>{
         return(
         <div >
           <div className="regroup">
-          <img className="repixel" src={this.state.data[15].submenu[index].image}>   
-          </img> <span>{this.state.data[15].submenu[index].title} <p className="related-p">{this.state.data[15].submenu[index].price}$</p><p className="related-p">Add to Wishlist</p></span>
+          <img className="repixel" src={this.state.data[16].submenu[index].image}>   
+          </img> <span>{this.state.data[16].submenu[index].title} <p className="related-p">{this.state.data[16].submenu[index].price}$</p><p className="related-p">Add to Wishlist</p></span>
           </div>
         </div>
         )

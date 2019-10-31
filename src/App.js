@@ -6,8 +6,15 @@ import Footer from './Footer';
 import About from './About';
 import Feature from './Feature';
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import axios from 'axios';
-import Shirt from './Shirt'
+import Shirt from './Shirt';
+import Shoe from './Shoes';
+import FeatureShoes from './Featuureshoes';
+import Bag from './Bags';
+import FeatureBag from './Featurebag';
+import Phone from './Phone';
+import FeaturePhone from './FeaturePhone';
+import Accessories from './Accessories'
+import FeatureAccessories from './FeatureAccessories';
 
 export default class App extends Component {
  render(){
@@ -23,10 +30,34 @@ export default class App extends Component {
                     <Route path="/Feature-Cell" > 
                     <Feature />                   
                     </Route>
+                    <Route path="/Feature-Shoes" > 
+                    <FeatureShoes />                   
+                    </Route>
                     <Route path="/Store-Cell" > 
                     </Route>
                     <Route path="/Shirt" >
                         <Shirt /> 
+                    </Route>
+                    <Route path="/Shoe" >
+                        <Shoe /> 
+                    </Route>
+                    <Route path="/bag" >
+                        <Bag /> 
+                    </Route>
+                    <Route path="/Feature-bag" >
+                        <FeatureBag /> 
+                    </Route>
+                    <Route path="/Phone" >
+                        <Phone /> 
+                    </Route>
+                    <Route path="/Feature-phone" >
+                        <FeaturePhone /> 
+                    </Route>
+                    <Route path="/Accessories" >
+                        <Accessories /> 
+                    </Route>
+                    <Route path="/Feature-accessories" >
+                        <FeatureAccessories /> 
                     </Route>
                 <About />
                 <Footer />  

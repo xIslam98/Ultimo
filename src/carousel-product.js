@@ -45,7 +45,6 @@ export default class SliderFeature extends React.Component {
                     </span>
                     </span>
                     <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div>                             
-                    <span className="img-1-price">{this.state.data[8].submenu[index].price}$</span>
                   <span className="img-2-offer">{this.state.data[8].submenu[index].offer_price}</span>
                     </Link> 
                :

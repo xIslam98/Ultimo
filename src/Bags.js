@@ -9,12 +9,12 @@ import axios from 'axios'
 let tempo=0;
 let tempo2;
 let tempo3=[];
-export default class Shirt extends React.Component {
+export default class Bag extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
             data: "undefined",
-            list:"product",
+            list:"product"
           }
           this.orderbyname = this.orderbyname.bind(this)
           this.select=this.select.bind(this)
@@ -34,16 +34,16 @@ export default class Shirt extends React.Component {
     }
     orderbyname(){
         tempo2=this.state.data
-        tempo = this.state.data[8].submenu.sort(this.dynamicSort('title'));
-        tempo2[8].submenu=tempo;
+        tempo = this.state.data[15].submenu.sort(this.dynamicSort('title'));
+        tempo2[15].submenu=tempo;
         console.log(tempo2)
         this.setState({data: tempo2});
         console.log(this.state.data)
     }
     orderbyprice(){  
         tempo2=this.state.data
-        tempo = this.state.data[8].submenu.sort(this.dynamicSort('price'));
-        tempo2[8].submenu=tempo;
+        tempo = this.state.data[15].submenu.sort(this.dynamicSort('price'));
+        tempo2[15].submenu=tempo;
         console.log(tempo2)
         this.setState({data: tempo2});
         console.log(this.state.data)
@@ -64,12 +64,12 @@ export default class Shirt extends React.Component {
     }
     price(PriceDefineStart,PriceDefineEnd,e){
         e.preventDefault()
-        for(let i=0;i<this.state.data[8].submenu.length;i++){
-            if((PriceDefineStart<this.state.data[8].submenu[i].price) && (PriceDefineEnd >this.state.data[8].submenu[i].price))
-            tempo3.push(this.state.data[8].submenu[i])
+        for(let i=0;i<this.state.data[15].submenu.length;i++){
+            if((PriceDefineStart<this.state.data[15].submenu[i].price) && (PriceDefineEnd >this.state.data[15].submenu[i].price))
+            tempo3.push(this.state.data[15].submenu[i])
         }
         tempo2=this.state.data
-        tempo2[8].submenu=tempo3;
+        tempo2[15].submenu=tempo3;
         console.log(tempo3);
         console.log(tempo2);
         this.setState({data: tempo2});
@@ -106,22 +106,22 @@ render(){
                     <h3 className="h3-shirt">Categories & Tops</h3>
                     <span className="section-line"></span>
                     <div className="div-size">
-                        <li className="size">Size-Small</li>                       
-                        <li className="size">Size-Medium</li>                       
-                        <li className="size">Size-Large</li>           
+                        <li className="size">Flat Shoes</li>                       
+                        <li className="size">Flat Sandal</li>                       
+                        <li className="size">Boots</li>  
+                        <li className="size">Heels</li>           
                     </div>
                     <h3 className="h3-shirt">Shop By</h3>
                     <span className="section-line"></span>
                     <div className="price-navbar">
                         <p className="title-navbar-weight">Price</p>
-                        <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price" onClick={(e)=>this.price(49.99,59.99,e)}>$50.00()-$59.99()</li></div>
+                        <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price" onClick={(e)=>this.price(0,59.99,e)}>$0()-$59.99()</li></div>
                         <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price" onClick={(e)=>this.price(69.99,79.99,e)}>$70.00()-$79.99()</li></div>
-                        <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i ><li className="price" onClick={(e)=>this.price(79.99,1000000,e)}>$80.00() and above</li></div>
+                        <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i ><li className="price" onClick={(e)=>this.price(79.99,1000000,e)}>$150.00() and above</li></div>
                     </div>
                     <div className="Manufacter">
                     <p className="title-navbar-weight">Manufacter</p>
-                    <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price">The Brand()</li></div>
-                        <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price">Company()</li></div>
+                    <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price">LogoFashion()</li></div>
                     </div>
                     <div className="Color-navbar">
                         <p className="title-navbar-weight">Color</p>
@@ -158,11 +158,11 @@ render(){
                                 <p className="para-item-pdl" >Show</p>
                                 <select className="select-item-pdl">                 
                                 <option value="4">4</option>
-                                <option value="8">8</option>
+                                <option value="15">15</option>
                                 <option value="12">12</option>
                                 <option value="15">15</option>
                                 <option value="30">30</option>
-                                <option value="80">80</option>
+                                <option value="150">150</option>
                                 </select>
                                 <p className="para-item-pdl" >per page</p>
                             </div>
@@ -172,38 +172,39 @@ render(){
                                 <i class="fas fa-list" onClick={(e)=>this.createlist(e)}></i>
                             </div>
                             </div>
+                            <span className="section-line"></span>
                             <div className={this.state.list}>
                             { this.state.list ==="product"
                             
                             ? <span className="adjust-list">
-                                {  this.state.data[8].submenu.map((mater,index)=>{
+                                {  this.state.data[15].submenu.map((mater,index)=>{
                                     return(
                                         <div className="product-plp">
-                                { this.state.data[8].submenu[index].offer  
+                                { this.state.data[15].submenu[index].offer  
                                 ? 
-                                <Link to={`/Feature-cell?id=${index}`}>
+                                <Link to={`/Feature-bag?id=${index}`}>
                                     <div className="simple-flex-shirt">
                                 
-                                    <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                                    <img className="img-slide2" src={this.state.data[15].submenu[index].image}></img>
                                     <span className="sticker-wrapper">
                                         <span className="sticker sale">
                                             Sale
                                         </span>
                                         </span>
                                     </div>
-                                        <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div> 
+                                        <div className="img-0-slide">{this.state.data[15].submenu[index].title}</div> 
                                         <div className="simple-flex2">                           
-                                        <span className="img-1-price">{this.state.data[8].submenu[index].price}$</span>
-                                    <span className="img-2-offer">{this.state.data[8].submenu[index].offer_price}</span>
+                                        <span className="img-1-price">{this.state.data[15].submenu[index].price}$</span>
+                                    <span className="img-2-offer">{this.state.data[15].submenu[index].offer_price}</span>
                                     <button className="hover-apparence">View Details</button>
                                     </div>
                                         </Link> 
                                 :
-                                <Link to={`/Feature-cell?id=${index}`}>
-                                    <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
-                                    <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div>
+                                <Link to={`/Feature-bag?id=${index}`}>
+                                    <img className="img-slide2" src={this.state.data[15].submenu[index].image}></img>
+                                    <div className="img-0-slide">{this.state.data[15].submenu[index].title}</div>
                                     <div className="simple-flex2">
-                                    <span className="img-0-slide">{this.state.data[8].submenu[index].price}$</span>
+                                    <span className="img-0-slide">{this.state.data[15].submenu[index].price}$</span>
                                     <button className="hover-apparence">View Details</button>
                                     </div>
                                     </Link> 
@@ -214,15 +215,15 @@ render(){
                             })
                             }</span >
                     :   <span className="adjust-list">
-                    {  this.state.data[8].submenu.map((mater,index)=>{
+                    {  this.state.data[15].submenu.map((mater,index)=>{
                         return(
                             <div className="product-plp">
-                    { this.state.data[8].submenu[index].offer  
+                    { this.state.data[15].submenu[index].offer  
                     ? 
                     <div className="simple-flex">
                         <div className="contenitor-list">
-                    <Link to={`/Feature-cell?id=${index}`}>
-                        <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                    <Link to={`/Feature-bag?id=${index}`}>
+                        <img className="img-slide2" src={this.state.data[15].submenu[index].image}></img>
                         <span className="sticker-wrapper">
                                 <span className="sticker sale">
                             Sale
@@ -232,18 +233,18 @@ render(){
                     </div>
                         <div className="regroup-list2">
                         <div className="regroup-list">
-                            <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div>
-                            <span className="img-2-offer">{this.state.data[8].submenu[index].offer_price}</span>
+                            <div className="img-0-slide">{this.state.data[15].submenu[index].title}</div>
+                            <span className="img-2-offer">{this.state.data[15].submenu[index].offer_price}</span>
                         </div>
                         <div className="regroup-list">
                             <div className="simple-flex">
                                 <div className="white-color"></div>
                                 <div className="black-color"></div>
                             </div>
-                            <Link to={`/Feature-cell?id=${index}`}><button>View Details</button></Link>
+                            <Link to={`/Feature-bag?id=${index}`}><button>View Details</button></Link>
                         </div>
                         <div className="simple-flex">
-                        <span className="img-0-description">{this.state.data[8].submenu[index].description}$</span>
+                        <span className="img-0-description">{this.state.data[15].submenu[index].description}$</span>
                         <div className="regroup2-list">
                             <a className="link-list">Add to WishList</a>
                             <a className="link-list">Add to Compare</a>
@@ -255,13 +256,13 @@ render(){
                     :
                     <div className="simple-flex">
                         <div className="contenitor-list">
-                    <Link to={`/Feature-cell?id=${index}`}>
-                        <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                    <Link to={`/Feature-bag?id=${index}`}>
+                        <img className="img-slide2" src={this.state.data[15].submenu[index].image}></img>
                     </Link></div>
                         <div className="regroup-list2">
                         <div className="regroup-list">
-                            <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div>
-                            <span className="img-0-slide">{this.state.data[8].submenu[index].price}$</span>
+                            <div className="img-0-slide">{this.state.data[15].submenu[index].title}</div>
+                            <span className="img-0-slide">{this.state.data[15].submenu[index].price}$</span>
                         </div>
                         <div className="regroup-list">
                             <div className="simple-flex">
@@ -271,7 +272,7 @@ render(){
                             <button>View Details</button>
                         </div>
                         <div className="simple-flex">
-                        <span className="img-0-description">{this.state.data[8].submenu[index].description}$</span>
+                        <span className="img-0-description">{this.state.data[15].submenu[index].description}$</span>
                         <div className="regroup2-list">
                             <a className="link-list">Add to WishList</a>
                             <a className="link-list">Add to Compare</a>
