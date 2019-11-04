@@ -15,6 +15,8 @@ import Phone from './Phone';
 import FeaturePhone from './FeaturePhone';
 import Accessories from './Accessories'
 import FeatureAccessories from './FeatureAccessories';
+import Login from './Login'
+import Register from './registration'
 
 export default class App extends Component {
  render(){
@@ -58,6 +60,12 @@ export default class App extends Component {
                     </Route>
                     <Route path="/Feature-accessories" >
                         <FeatureAccessories /> 
+                    </Route>
+                    <Route path="/login" >
+                        <Login /> 
+                    </Route>
+                    <Route path="/register">
+                        <Register />
                     </Route>
                 <About />
                 <Footer />  

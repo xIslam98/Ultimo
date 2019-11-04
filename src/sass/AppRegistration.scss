@@ -1,0 +1,59 @@
+.personal-info{
+font-weight: 500;
+}
+.registration-name {
+    display: flex;
+    flex-flow: column;
+    margin:1%;
+}
+.mid-name {
+    display: flex;
+    flex-flow: column;
+    margin:1%;
+  
+}
+.last-name {
+    display: flex;
+    flex-flow: column;
+    margin:1%;
+}
+input.first-name {
+    border: 1px solid #e5e5e5;
+    width: 189px;
+    height: 35px;
+}
+input.mid-name {
+    border: 1px solid #e5e5e5;
+    width: 49px;
+    height: 35px;
+}
+input.last-name {
+    border: 1px solid #e5e5e5;
+    width: 189px;
+    height: 35px;
+}
+input.email  {
+    border: 1px solid #e5e5e5;
+    width: 262px;
+    height: 35px;
+}
+div.email {
+    display: flex;
+    flex-flow: column;
+    margin:1%;
+   
+}
+.checkbox{
+    margin-left: 1%;
+}
+h2.personal-info {
+    margin-left: 2%;
+    margin-bottom: 0;
+}
+.submit-register{
+margin-right: 2%;
+}
+.simple-flex-left{
+    margin:1%;
+    display:flex;
+}

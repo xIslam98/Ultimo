@@ -97,7 +97,7 @@ render(){
                     <ul className="links2">
                         <li className="account">Account</li>
                         <li className="wishlist">Wishlist</li>
-                        <li className="login">Log In</li>
+                        <Link to={`/login`}><li className="login">Log In</li></Link>
                     </ul>
                     <span className="dropdown2">
                     <span className="compare"><img className="compare-logo" src={compare}></img>Compare</span>

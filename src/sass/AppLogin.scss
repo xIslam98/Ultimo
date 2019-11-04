@@ -1,0 +1,63 @@
+.regroup-row{
+    display:flex;
+    flex-flow: row;
+}
+.login-row{
+    width: 50%;
+}
+.login-title{
+    margin-left:17px;
+}
+.login-title{
+    margin-left:17px;
+}
+.back-title{
+    background-color: white;
+    margin: 2%;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-top: -21px;
+}
+.para-login{
+    margin-left:17px;
+}
+.create-login{
+    margin-left:17px;
+        margin-left: 17px;
+        width: 180px;
+        height: 45px;
+        background: #eee;
+        border: 0;
+}
+.create-login:hover{
+    background:orange;
+    color:white;
+    transition: .5s;
+    
+}
+input.input-login {
+        width: 262px;
+        height: 32px;
+        display: block;
+    }
+    .regroup-bet {
+        display: flex;
+        justify-content: space-between;
+    }
+    a.forgot-your-pass:hover {
+        color: #f55856;
+        transition: .5s;
+    }
+    .margin-login {
+        margin-left: 17px;
+    }
+    li.element-login:hover {
+        background: #f55856;
+        color: white;
+        transition: .5s;
+    }
+    li.element-login {
+        padding: 12px;    
+        margin-bottom: 10px;
+    }
+
