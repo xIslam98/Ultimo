@@ -4,13 +4,17 @@ import './font-awesome/css/solid.css';
 import './font-awesome/css/all.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 let id;
 let psw;
 export default class Login extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            data: "undefined"
+            data: "undefined",
+            data2: [],
+            login:false
         }
         this.selectid=this.selectid.bind(this);
         this.selectpsw=this.selectpsw.bind(this);
@@ -23,6 +27,12 @@ componentDidMount () {
   console.log(this.data)
   this.setState({data: response.data});
   });
+  axios.get('http://127.0.0.1:7000/utenti')
+    .then((response) => {
+  this.data2 = response.data;
+  console.log(this.data2)
+  this.setState({data2: response.data});
+  });
 }
 selectid(e){
     id=e.target.value;
@@ -31,7 +41,34 @@ selectpsw(e){
     psw=e.target.value;
 }
 Login(e){
-    let controllonome=this.state.data[18].find((element) => { return element.username === id});
+    let controllonome=this.state.data2.find((element) => { return element.username === id})
+    let controllopassword=this.state.data2.find((element) => { return element.password === psw})
+    if(controllonome !== undefined && controllopassword !== undefined){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+        })              
+        Toast.fire({
+            type: 'success',
+            title: 'Signed in successfully'
+        })
+        window.sessionStorage.setItem("user", id);
+        window.sessionStorage.setItem("psw", psw);
+        window.location.reload(0);
+}else{
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    })              
+    Toast.fire({
+        type: 'error',
+        title: 'Check all the data'
+    })
+}
 }
 render(){
     if(this.state.data[0].id){
@@ -54,7 +91,7 @@ render(){
                         <label>Email address</label>
                         <input className="input-login" onChange={(e)=>this.selectid(e)}></input>
                         <label>Password</label>
-                        <input className="input-login" onChange={(e)=>this.selectpsw(e)}></input>
+                        <input type="password" className="input-login" onChange={(e)=>this.selectpsw(e)}></input>
                     </div>
                     <span className="section-line"></span>
                     <div className="regroup-bet">

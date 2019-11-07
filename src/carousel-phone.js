@@ -47,7 +47,14 @@ export default class SliderPhone extends React.Component {
               { this.state.data[9].submenu[index].offer  
               ? 
               <Link to={`/Feature-phone?id=${index}`}>
-                <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
+                <div className="simple-relative"> <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
+                { this.state.data[9].submenu[index].image2  
+              ? 
+                <img className="img-slide-hide" src={this.state.data[9].submenu[index].image2}></img>
+                : <span></span>
+                }<i class="fas fa-heart wishlist"></i>
+                <i class="fas fa-box"></i>
+                </div>
                 <span className="sticker-wrapper top-right">
                     <span className="sticker sale">
                         Sale
@@ -59,7 +66,14 @@ export default class SliderPhone extends React.Component {
                     </Link> 
                :
                <Link to={`/Feature-phone?id=${index}`}>
-                  <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
+                 <div className="simple-relative"> <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
+                  { this.state.data[9].submenu[index].image2  
+              ? 
+                <img className="img-slide-hide" src={this.state.data[9].submenu[index].image2}></img>
+                : <span></span>
+                }<i class="fas fa-heart wishlist"></i>
+                <i class="fas fa-box"></i>
+                </div>
                   <div className="img-0-slide">{this.state.data[9].submenu[index].title}</div>
                     { this.state.data[9].submenu[index].low  
                     ?<span>

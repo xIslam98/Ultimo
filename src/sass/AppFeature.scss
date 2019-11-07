@@ -280,3 +280,35 @@ h1.shoes-title {
 .company-feature {
     width: 26%;
 }
+span.call {
+    position: absolute;
+    top: 0px;
+    right: 14px;
+    width: 51px;
+    height: 51px;
+    background: #e5e5e5;
+    font-size: 32px;
+}
+.size2{
+    width: 72%;
+    padding: 15px;
+    float: left;
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.simple-flex-relative{
+    display:flex;
+    position: relative;
+}
+.size.types{
+    display:none;
+}
+.size2:hover{
+    background-color: #5bd2ec;
+    transition: .5s;
+}
+.call:hover{
+    cursor: pointer;
+}

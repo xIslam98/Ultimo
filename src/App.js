@@ -13,11 +13,13 @@ import Bag from './Bags';
 import FeatureBag from './Featurebag';
 import Phone from './Phone';
 import FeaturePhone from './FeaturePhone';
-import Accessories from './Accessories'
+import Accessories from './Accessories';
 import FeatureAccessories from './FeatureAccessories';
-import Login from './Login'
-import Register from './registration'
-
+import Login from './Login';
+import Register from './registration';
+import Women from './Women';
+import Account from './Account';
+import Wishlist from './wishlist'
 export default class App extends Component {
  render(){
         return (
@@ -66,6 +68,15 @@ export default class App extends Component {
                     </Route>
                     <Route path="/register">
                         <Register />
+                    </Route>
+                    <Route path="/women">
+                        <Women />
+                    </Route>
+                    <Route path="/account">
+                        <Account />
+                    </Route>
+                    <Route path="/wishlist">
+                        <Wishlist />
                     </Route>
                 <About />
                 <Footer />  

@@ -60,6 +60,11 @@ printFunction3(index){
         )
     }
 }
+deletestorage(e){
+ window.sessionStorage.removeItem("user")
+ window.sessionStorage.removeItem("psw")
+ window.location.reload(0);
+}
 
 render(){
     if (this.state.data[0].title !== undefined) {
@@ -74,7 +79,13 @@ render(){
                         <li className="first-link"> All Demos </li>
                         <li className="second-link"> Features </li>
                         <li className="third-link"> Buy Me </li>
-                        <li>Welcome msg!</li>
+                        {
+                            sessionStorage.length>0
+                            ?
+                            <li>Welcome {sessionStorage.user}!</li>
+                            :
+                            <li> Welcome to the page!</li>
+                        }
                     </ul>
                 </div>
                 <div className="select-nation">
@@ -95,9 +106,16 @@ render(){
                 <img src="http://ultimo.infortis-themes.com/demo/skin/frontend/ultimo/default/images/logo-3.png"></img>
                 <div className="second-right">
                     <ul className="links2">
-                        <li className="account">Account</li>
+                        
+                    <Link to={`/account`}><li className="account">Account</li></Link>
                         <li className="wishlist">Wishlist</li>
-                        <Link to={`/login`}><li className="login">Log In</li></Link>
+                        {
+                            sessionStorage.length>0
+                            ?
+                            <li className="login" onClick={(e)=>this.deletestorage(e)} >Logout</li>                           
+                            :
+                            <Link to={`/login`}><li className="login">Log In</li></Link>
+                        }
                     </ul>
                     <span className="dropdown2">
                     <span className="compare"><img className="compare-logo" src={compare}></img>Compare</span>
@@ -117,7 +135,7 @@ render(){
                         <ul className="navbar">
                             <li><a className="home-navbar" href="http://localhost:3000/"><img className="home-logo" src={homelogo}></img>Home</a></li>                                
                                 <li className="dropdown4">
-                                    <a className="women">{this.state.data[0].title}</a>
+                                <Link to={`/Women`} className="all-links"><a className="women">{this.state.data[0].title}</a></Link>
                                 <div className="women-content">
                                     <div className="women-low" >
                                         {

@@ -70,19 +70,24 @@ registra(e){
        tempo.push(insert);
        this.setState({data2: tempo});
        
-       fetch("http://127.0.0.1:7000/utenti", {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json",
-        },
-        body: insert,
-        })
+       axios.post(`http://127.0.0.1:7000/utenti`, { 
+        username: first,
+        mid: mid,
+        last: last,
+        email: email,
+        password: password,
+        confirmpass:confirm
+    })
+       .then(res => {
+         console.log(res);
+         console.log(res.data);
+       })
        Swal.fire({
             type: 'success',
             title: 'Registrazione',
             text: 'Operazione Completate'
           })
-         // window.location.replace("http://127.0.0.1:3000/login");
+         window.location.replace("http://127.0.0.1:3000/login");
     }  
     }
 render(){
@@ -137,8 +142,6 @@ render(){
                 </div>
 
                 <div className="link-brand">
-                           
-                            
                             <ul className="ul-brand-login">
                         <div className="regroup-bet"> 
                             <div className="simple-flex">

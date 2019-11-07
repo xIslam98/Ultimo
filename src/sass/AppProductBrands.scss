@@ -56,3 +56,16 @@ li.li-brand1:hover{
 li.li-brand2:hover{
     background-color:#f55856 ;
 }
+.simple-flex-2 {
+    display: flex;
+    margin-left: 15px;
+    padding: 10px;
+}
+.simple-flex-2:hover i.fas.fa-caret-right {
+    position: relative;
+    left: 5%;
+    transition: 0.5s;
+}
+.simple-flex-2:hover li.price {
+    color: #f55856;
+}

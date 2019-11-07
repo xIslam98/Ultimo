@@ -106,10 +106,18 @@ render(){
                     <h3 className="h3-shirt">Categories & Tops</h3>
                     <span className="section-line"></span>
                     <div className="div-size">
-                        <li className="size">Flat Shoes</li>                       
-                        <li className="size">Flat Sandal</li>                       
-                        <li className="size">Boots</li>  
-                        <li className="size">Heels</li>           
+                        <li className="size">Headsets</li>                       
+                        <li className="size">Bluetooth Wireless</li>                       
+                        <li className="size">Earphones</li>  
+                        <li className="size">Batteries</li>
+                        <li className="size">Screen Protectors</li> 
+                        <li className="size">Memory Cards</li> 
+                        <li className="size">Cables & Adapters</li> 
+                        <li className="size">Cleaning Cloth</li> 
+                        <li className="size">Chargers</li> 
+                        <li className="size">Cases</li> 
+                        <li className="size">Covers</li> 
+                        <li className="size">Skins</li>            
                     </div>
                     <h3 className="h3-shirt">Shop By</h3>
                     <span className="section-line"></span>
@@ -121,7 +129,7 @@ render(){
                     </div>
                     <div className="Manufacter">
                     <p className="title-navbar-weight">Manufacter</p>
-                    <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price">LogoFashion()</li></div>
+                    <div className="simple-flex-navbar"><i class="fas fa-caret-right"></i><li className="price">SoundWave()</li></div>
                     </div>
                     <div className="Color-navbar">
                         <p className="title-navbar-weight">Color</p>
@@ -131,19 +139,12 @@ render(){
                         <div className="regroup-color"><div className="black-color"></div><p className="parents">()</p></div>
                         <div className="regroup-color"><div className="blue-color"></div><p className="parents">()</p></div>
                     </div>
-                    <div className="Color-navbar">
-                        <p className="title-navbar-weight">Color</p>
-                        <div className="regroup-color"><div className="size-color">S</div><p className="parents">()</p></div>
-                        <div className="regroup-color"><div className="size-color">M</div><p className="parents">()</p></div>
-                        <div className="regroup-color"><div className="size-color">L</div><p className="parents">()</p></div>
-                        <div className="regroup-color"><div className="size-color">XL</div><p className="parents">()</p></div>
-                    </div>
                     <h3 className="h3-shirt">Custom Block (top)</h3>
                     <span className="section-line"></span>
                     <p className="custo-top">Custom CMS block displayed at the top of the left sidebar. Put your own content here.</p>
                     </div>
                     <div className="shirt-div">
-                    <h1 className="shirt-title">Shirt & Tops</h1>
+                    <h1 className="shirt-title">Accessories</h1>
                     <span className="section-line"></span>
                     <div className="option-pdl">
                             <div className="simple-flex">
@@ -184,9 +185,12 @@ render(){
                                 ? 
                                 <Link to={`/Feature-accessories?id=${index}`}>
                                     <div className="simple-flex-shirt">
-                                
+                                    <div className="simple-relative">
                                     <img className="img-slide2" src={this.state.data[16].submenu[index].image}></img>
-                                    <span className="sticker-wrapper">
+                                    <i class="fas fa-heart wishlist"  onClick={(e)=>this.AddProductWish(e)} data-set={index}></i>
+                                    <i class="fas fa-box"></i>
+                                    </div>
+                                        <span className="sticker-wrapper">
                                         <span className="sticker sale">
                                             Sale
                                         </span>
@@ -196,16 +200,20 @@ render(){
                                         <div className="simple-flex2">                           
                                         <span className="img-1-price">{this.state.data[16].submenu[index].price}$</span>
                                     <span className="img-2-offer">{this.state.data[16].submenu[index].offer_price}</span>
-                                    <button className="hover-apparence">View Details</button>
+                                    <button className="hover-apparence">Add To Cart</button>
                                     </div>
                                         </Link> 
                                 :
                                 <Link to={`/Feature-accessories?id=${index}`}>
+                                     <div className="simple-relative">
                                     <img className="img-slide2" src={this.state.data[16].submenu[index].image}></img>
+                                    <i class="fas fa-heart wishlist"  onClick={(e)=>this.AddProductWish(e)} data-set={index}></i>
+                                    <i class="fas fa-box"></i>
+                                    </div>
                                     <div className="img-0-slide">{this.state.data[16].submenu[index].title}</div>
                                     <div className="simple-flex2">
                                     <span className="img-0-slide">{this.state.data[16].submenu[index].price}$</span>
-                                    <button className="hover-apparence">View Details</button>
+                                    <button className="hover-apparence">Add To Cart</button>
                                     </div>
                                     </Link> 
                                     
@@ -241,7 +249,7 @@ render(){
                                 <div className="white-color"></div>
                                 <div className="black-color"></div>
                             </div>
-                            <Link to={`/Feature-accessories?id=${index}`}><button>View Details</button></Link>
+                            <Link to={`/Feature-accessories?id=${index}`}><button>Add to Cart</button></Link>
                         </div>
                         <div className="simple-flex">
                         <span className="img-0-description">{this.state.data[16].submenu[index].description}$</span>
@@ -269,7 +277,7 @@ render(){
                                 <div className="white-color"></div>
                                 <div className="black-color"></div>
                             </div>
-                            <button>View Details</button>
+                            <button>Add to Cart</button>
                         </div>
                         <div className="simple-flex">
                         <span className="img-0-description">{this.state.data[16].submenu[index].description}$</span>

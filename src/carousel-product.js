@@ -3,13 +3,19 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+let contact;
+let utente;
+let index;
 export default class SliderFeature extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-        data: "undefined"
+        data: "undefined",
+        data2: [],
     }
+    this.AddProductWish=this.AddProductWish.bind(this);
 }
     componentDidMount () {
     axios.get('http://127.0.0.1:7000/menu')
@@ -18,6 +24,45 @@ export default class SliderFeature extends React.Component {
     console.log(this.data)
     this.setState({data: response.data});
     });
+    axios.get('http://127.0.0.1:7000/utenti')
+      .then((response) => {
+    this.data2 = response.data;
+      console.log(this.data2)
+      this.setState({data2: response.data});
+      });
+    }
+    AddProductWish(e){
+      if(sessionStorage.length>0){
+         contact = sessionStorage.getItem("user");
+       utente=this.state.data2.find((element) => { return element.username === contact})
+       index=this.state.data2.indexOf(utente);
+       let s=e.target.dataset.set
+       let wishlist= [];
+       wishlist.push(this.state.data2[index].wishlist)
+       let exElementi = [
+          { 
+          id:this.state.data[8].submenu[s].id, 
+          title:this.state.data[8].submenu[s].title,
+          image:this.state.data[8].submenu[s].image,
+          offer:this.state.data[8].submenu[s].offer,
+          offer_price:this.state.data[8].submenu[s].offer_price,
+          price:this.state.data[8].submenu[s].price,
+          image2:this.state.data[8].submenu[s].image2 
+          }
+        ]
+        wishlist.push(exElementi);
+        console.log(this.state.data2);
+       axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {wishlist})
+       .then(res => {
+         console.log(res);
+         console.log(res.data);
+       })
+       Swal.fire({
+            type: 'success',
+            title: 'Registrazione',
+            text: 'Operazione Completate'
+          })
+      }
     }
   render() {
     if (this.state.data[0].title) {
@@ -38,7 +83,14 @@ export default class SliderFeature extends React.Component {
               { this.state.data[8].submenu[index].offer  
               ? 
               <Link to={`/Feature-cell?id=${index}`}>
-                <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                <div className="simple-relative" ><img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                { this.state.data[8].submenu[index].image2  
+              ? 
+                <img className="img-slide-hide" src={this.state.data[8].submenu[index].image2}></img>
+                : <span></span>
+                }<i class="fas fa-heart wishlist"  onClick={(e)=>this.AddProductWish(e)} data-set={index}></i>
+                <i class="fas fa-box"></i>
+                </div>
                 <span className="sticker-wrapper top-right">
                     <span className="sticker sale">
                         Sale
@@ -49,7 +101,14 @@ export default class SliderFeature extends React.Component {
                     </Link> 
                :
                <Link to={`/Feature-cell?id=${index}`}>
-                  <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                 <div className="simple-relative"> <img className="img-slide2" src={this.state.data[8].submenu[index].image}></img>
+                  { this.state.data[8].submenu[index].image2  
+              ? 
+                <img className="img-slide-hide" src={this.state.data[8].submenu[index].image2}></img>
+                : <span></span>
+                } <i class="fas fa-heart wishlist" onClick={(e)=>this.AddProductWish(e)} data-set={index}></i>
+                <i class="fas fa-box"></i>
+                </div>
                   <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div>
                   <span className="img-0-slide">{this.state.data[8].submenu[index].price}$</span>
                 </Link> 

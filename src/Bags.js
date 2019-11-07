@@ -103,13 +103,13 @@ render(){
             <div className="shirt-shop">
                 <div className="regroup-pdl">
                     <div className="lateral-bar">
-                    <h3 className="h3-shirt">Categories & Tops</h3>
+                    <h3 className="h3-shirt">Categories:Bags</h3>
                     <span className="section-line"></span>
                     <div className="div-size">
-                        <li className="size">Flat Shoes</li>                       
-                        <li className="size">Flat Sandal</li>                       
-                        <li className="size">Boots</li>  
-                        <li className="size">Heels</li>           
+                        <li className="size">Designe Bags</li>                       
+                        <li className="size">Handbags</li>                       
+                        <li className="size">Purses</li>  
+                        <li className="size">Shoulder Bags</li>           
                     </div>
                     <h3 className="h3-shirt">Shop By</h3>
                     <span className="section-line"></span>
@@ -133,17 +133,16 @@ render(){
                     </div>
                     <div className="Color-navbar">
                         <p className="title-navbar-weight">Color</p>
-                        <div className="regroup-color"><div className="size-color">S</div><p className="parents">()</p></div>
                         <div className="regroup-color"><div className="size-color">M</div><p className="parents">()</p></div>
                         <div className="regroup-color"><div className="size-color">L</div><p className="parents">()</p></div>
-                        <div className="regroup-color"><div className="size-color">XL</div><p className="parents">()</p></div>
+                        
                     </div>
                     <h3 className="h3-shirt">Custom Block (top)</h3>
                     <span className="section-line"></span>
                     <p className="custo-top">Custom CMS block displayed at the top of the left sidebar. Put your own content here.</p>
                     </div>
                     <div className="shirt-div">
-                    <h1 className="shirt-title">Shirt & Tops</h1>
+                    <h1 className="shirt-title">Bags</h1>
                     <span className="section-line"></span>
                     <div className="option-pdl">
                             <div className="simple-flex">
