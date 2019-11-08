@@ -19,7 +19,8 @@ import Login from './Login';
 import Register from './registration';
 import Women from './Women';
 import Account from './Account';
-import Wishlist from './wishlist'
+import Wishlist from './wishlist';
+import Cart from './cart';
 export default class App extends Component {
  render(){
         return (
@@ -77,6 +78,9 @@ export default class App extends Component {
                     </Route>
                     <Route path="/wishlist">
                         <Wishlist />
+                    </Route>
+                    <Route path="/cart">
+                        <Cart />
                     </Route>
                 <About />
                 <Footer />  

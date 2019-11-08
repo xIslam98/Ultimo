@@ -12,7 +12,7 @@ let index;
 let contact;
 let tempora;
 let contprice=0;
-export default class Wishlist extends React.Component{
+export default class Cart extends React.Component{
     constructor (props) {
         super(props)
         this.state = {
@@ -66,12 +66,12 @@ export default class Wishlist extends React.Component{
     removewishcart(e){
         contprice=0;
         let cont=e.target.dataset.set;
-        //let tempodelete=this.state.data2[index].wishlist[cont][0].id;
-        this.state.data2[index].wishlist.splice(cont,1)
+        //let tempodelete=this.state.data2[index].cart[cont][0].id;
+        this.state.data2[index].cart.splice(cont,1)
         let utenti=this.state.data2; 
         this.setState({data2: utenti})
-        let wishlist= this.state.data2[index].wishlist;
-        axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {wishlist})
+        let cart= this.state.data2[index].cart;
+        axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart})
        
 
     }
@@ -79,11 +79,11 @@ export default class Wishlist extends React.Component{
     contact = sessionStorage.getItem("user");
     utente=this.state.data2.find((element) => { return element.username === contact})
     index=this.state.data2.indexOf(utente); 
-     console.log( this.state.data2[index].wishlist) ;
+     console.log( this.state.data2[index].cart) ;
     }
     
     insertWishlist(position){
-        contprice=contprice+this.state.data2[index].wishlist[position][0].price;
+        contprice=contprice+this.state.data2[index].cart[position][0].price;
         return (
             <div>
         <div className="title">
@@ -93,9 +93,9 @@ export default class Wishlist extends React.Component{
         </div>
         <div className="contenitor-wishcart"> 
             <div className="simple-flex border">
-                <div className="image-cont"><img  className="img-wishcart" src={this.state.data2[index].wishlist[position][0].image}></img></div>
-                <div className="title-cont">{this.state.data2[index].wishlist[position][0].title}</div>
-                <div className="price-cont"><span className="margin-adjust-span">{this.state.data2[index].wishlist[position][0].price}$</span></div>
+                <div className="image-cont"><img  className="img-wishcart" src={this.state.data2[index].cart[position][0].image}></img></div>
+                <div className="title-cont">{this.state.data2[index].cart[position][0].title}</div>
+                <div className="price-cont"><span className="margin-adjust-span">{this.state.data2[index].cart[position][0].price}$</span></div>
                 <div className="regroup3 wishcart">
                                     <input type="text"  className="qty" value={this.state.s} data-set="quantity" onChange={this.select}></input>                              
                                     <div className="regroup4">
@@ -116,11 +116,11 @@ render(){
     if(this.state.data[0].title){
     return(
         <div className="back">
-            <h1 className="title-wishcart">Wishlist</h1>
+            <h1 className="title-wishcart">Cart</h1>
             {this.takeindex()}
             {
                 
-                   this.state.data2[index].wishlist.map((mater,index)=>{
+                   this.state.data2[index].cart.map((mater,index)=>{
                        return(
                        <div>{this.insertWishlist(index)}</div>
                        )

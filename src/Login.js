@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import MenuBottom from './menubottom'
 let id;
 let psw;
 export default class Login extends React.Component {
@@ -56,7 +57,7 @@ Login(e){
         })
         window.sessionStorage.setItem("user", id);
         window.sessionStorage.setItem("psw", psw);
-        window.location.reload(0);
+        window.location.href = "http://localhost:3000/";
 }else{
     const Toast = Swal.mixin({
         toast: true,
@@ -100,25 +101,7 @@ render(){
                     </div>
                     </div>
                 </div>
-                <div className="link-brand">
-                           
-                            
-                            <ul className="ul-brand-login">
-                        <div className="regroup-bet"> 
-                            <div className="simple-flex">
-                                <li className="element-login">Site Map</li>
-                                <li className="element-login">Search Terms    </li>
-                                <li className="element-login">Advanced Search</li>
-                                <li className="element-login">Orders and returns</li>
-                                <li className="element-login">Contact Us</li>
-                            </div>
-                            <div className="simple-flex">
-                                <li className="element-login" >About Us</li>
-                                <li className="element-login" >Custom Service </li>
-                            </div>
-                            </div>
-                            </ul>                                           
-                        </div>
+               <MenuBottom />
 
 
             </div>

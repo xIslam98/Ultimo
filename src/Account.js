@@ -50,7 +50,7 @@ render(){
                         <li className="account-function">RECURRING PROFILES</li>
                         <li className="account-function">MY PRODUCT REVIEWS</li>
                         <li className="account-function">MY TAGS</li>
-                        <li className="account-function">WISHLIST</li>
+                        <Link to={`/wishlist`}><li className="account-function">WISHLIST</li></Link>
                         <li className="account-function">MY APPLICATIONS</li>
                         <li className="account-function">NEWSLETTER SUBSCRIPTIONS</li>
                         <li className="account-function">MY DOWNLOADABLE PRODUCTS</li>

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React, { Component } from 'react';
 import './font-awesome/css/brands.css';
 import './font-awesome/css/solid.css';
@@ -7,10 +8,12 @@ import {Accordion,AccordionItem,AccordionItemHeading,AccordionItemPanel,Accordio
 import Related from './carousel-related';
 import Shoes from './carousel-shoes'
 import axios from 'axios';
- 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 let tempo;
-
-
+let index;
+let contact;
+let utente;
 export default class Feature extends React.Component {
     constructor (props) {
         super(props)
@@ -18,15 +21,24 @@ export default class Feature extends React.Component {
             s: 1,
             color: "",
             size: "",
-            data: "undefined"
+            data: "undefined",
+            data2:"undefined"
           }
           this.select = this.select.bind(this)
           this.addNumber = this.addNumber.bind(this)
           this.removeNumber = this.removeNumber.bind(this)
           this.changeColor = this.changeColor.bind(this)
           this.changesize = this.changesize.bind(this)
+          this.Addcart = this.Addcart.bind(this)
         }
     componentDidMount () {
+        axios.get('http://127.0.0.1:7000/utenti')
+        .then((response) => {
+        this.data2 = response.data;
+        console.log(this.data2)
+        this.setState({data2: response.data});
+        tempo= this.state.data2
+        });
         axios.get('http://127.0.0.1:7000/menu')
         .then((response) => {
       this.data = response.data;
@@ -60,6 +72,46 @@ export default class Feature extends React.Component {
                     this.setState({size: "M"})  
                 }
         }
+        Addcart(e){
+            if(sessionStorage.length>0){
+                const  dataindex = location.search.split("=");
+               contact = sessionStorage.getItem("user");
+             utente=this.state.data2.find((element) => { return element.username === contact})
+             index=this.state.data2.indexOf(utente);
+             let cart= [];
+             cart= this.state.data2[index].cart
+             let exElementi = [
+                { 
+                id:this.state.data[8].submenu[dataindex[1]].id, 
+                title:this.state.data[8].submenu[dataindex[1]].title,
+                image:this.state.data[8].submenu[dataindex[1]].image,
+                offer:this.state.data[8].submenu[dataindex[1]].offer,
+                offer_price:this.state.data[8].submenu[dataindex[1]].offer_price,
+                price:this.state.data[8].submenu[dataindex[1]].price,
+                image2:this.state.data[8].submenu[dataindex[1]].image2 
+                }
+              ]
+              cart.push(exElementi);
+              console.log(this.state.data2);
+             axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart})
+             .then(res => {
+               console.log(res);
+               console.log(res.data);
+             })
+             const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000
+          })              
+          Toast.fire({
+              type: 'success',
+              title: 'Signed in successfully'
+          })
+            }else{
+              window.location.href = "http://localhost:3000/login";
+            }
+          }
     render() {
         // eslint-disable-next-line no-restricted-globals
         const  dataindex = location.search.split("=");
@@ -136,7 +188,7 @@ export default class Feature extends React.Component {
 
                            </div>
                            <div className="regroup2">
-                           <button className="add-to-cart">Add To Cart</button>
+                           <button className="add-to-cart" onClick={(e)=>this.Addcart(e)}>Add To Cart</button>
                                 <span>Qty:</span>
                                 <div className="regroup3">
                                     <input type="text"  className="qty" value={this.state.s} data-set="quantity" onChange={this.select}></input>                              

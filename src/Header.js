@@ -9,20 +9,34 @@ import hot from './hot.png';
 import Carousel from './carousel-item';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+let contact;
+let utente;
+let index;
+let inserisci=0;
+let contprice=0;
 export default class Header extends Component{
     constructor (props) {
         super(props)
         this.state = {
-            data: "undefined"
+            data: "undefined",
+            data2:"undefined"
         }
+        this.takeIndex=this.takeIndex.bind(this);
     }
-componentDidMount () {
+componentDidMount () { 
+    axios.get('http://127.0.0.1:7000/utenti')
+      .then((response) => {
+    this.data2 = response.data;
+      console.log(this.data2)
+      this.setState({data2: response.data});
+      });
     axios.get('http://127.0.0.1:7000/menu')
     .then((response) => {
   this.data = response.data;
   console.log(this.data)
   this.setState({data: response.data});
   });
+ 
 }
 printFunction(index){
         if(this.state.data[0].submenu[index].submenu_menu){
@@ -65,8 +79,19 @@ deletestorage(e){
  window.sessionStorage.removeItem("psw")
  window.location.reload(0);
 }
-
+takeIndex(e){ 
+    if(sessionStorage.length>0){
+    contact = sessionStorage.getItem("user");
+    utente=this.state.data2.find((element) => { return element.username === contact})
+    index=this.state.data2.indexOf(utente); 
+        if(this.state.data2[index].cart.length>0){
+             inserisci=this.state.data2[index].cart.length  
+        return <span className="number-cart"> {inserisci} </span>
+        }
+    }
+}
 render(){
+    
     if (this.state.data[0].title !== undefined) {
     return(
          <div>
@@ -108,7 +133,13 @@ render(){
                     <ul className="links2">
                         
                     <Link to={`/account`}><li className="account">Account</li></Link>
-                        <li className="wishlist">Wishlist</li>
+                    {
+                            sessionStorage.length>0
+                            ?
+                            <Link to={`/wishlist`}><li className="wishlist">Wishlist</li></Link>
+                            :
+                            <Link to={`/login`}><li className="login">Wishlist</li></Link>
+                    }
                         {
                             sessionStorage.length>0
                             ?
@@ -122,8 +153,38 @@ render(){
                     <a href="#"><span className="compare-content">You Have no items to compare</span></a> 
                     </span>
                     <span className="dropdown3">
-                        <span className="cart"><img className="cart-logo" src={cart}></img>Cart</span>
-                        <span className="cart-content"><a href="#">You Have no items to compare</a></span>
+                    <Link to={'/cart'}><span className="cart"><img className="cart-logo" src={cart}></img>{this.takeIndex()}Cart</span></Link>
+                        <span className="cart-content">
+                        {
+                            sessionStorage.length>0
+                            ?   <span><p className="cart-write-notif" >Recently Added Item(s)</p>
+                            
+                        {  this.state.data2[index].cart.map((mater,index2)=>{
+                            return (
+                            <span>
+                        { inserisci>0
+                        ?  
+                            <div className="simple-flex">
+                                <img className="img-cart" src={this.state.data2[index].cart[index2][0].image}></img>
+                                <div className="simple-flex-cart">
+                                    <p className="title-cart">{this.state.data2[index].cart[index2][0].title}</p>
+                                    <p className="price-cart">Price:{this.state.data2[index].cart[index2][0].price}$</p>
+                                    <span className="none">{contprice=contprice+this.state.data2[index].cart[index2][0].price}</span>
+                                </div>
+                                <i class="fas fa-times-circle cart"></i>
+                            </div>                       
+                        :
+                            <span>You Have no items into the cart </span>
+                        }
+                        </span>) })
+                } 
+                <p className="cart-write-notif">Cart Subtotal:{contprice}$</p>
+                <p className="cart-write-notif">({contprice}$ Incl. Tax)</p>
+                <Link to={'/cart'}><button className="view-all-button">View All</button></Link>
+                </span>
+                :<span>You have no item into your Cart</span>
+                     }   
+                        </span>
                     </span>
                     <div className="wrap-search"><input id="search" type="text" maxLength="128"></input><button type submit title="search" className="search"><img className="search-img" src={search}></img></button></div>
                 </div>

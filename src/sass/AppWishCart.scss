@@ -147,7 +147,7 @@ button.button-coupons {
     margin-top: 4%;
     background: #e5e5e5;
     width: 60%;
-    height: 35%;
+    height: 50px;
     border: 0;
 }
 .input-coupon{
@@ -164,3 +164,89 @@ select.country {
     border: 1px solid black;
     background: white;
 }
+input.option-wishcart {
+    width: 100%;
+    height: 33px;
+}
+button.option-wishcart {
+    width: 40%;
+    border: 0;
+    margin: 2%;
+    background-color: #e5e5e5;
+    height: 50px;
+}
+button.option-wishcart:hover{
+    background:orange;
+    color:white;
+    transition: 1s;
+}
+span.number-cart{
+background-color: #f55856;
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+
+color: #fff;
+
+-moz-border-radius: 3px;
+border-radius: 3px;
+padding: 2px;
+margin-right: 2px;
+margin-left: -6px;
+}
+.simple-flex-cart {
+    display: flex;
+    flex-flow: column;
+}
+img.img-cart{
+    width: 70px;
+    height: auto;
+    margin: 2%;
+}
+.title-cart{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+   font-weight: 600;
+
+}
+.price-cart{
+    margin: 0;
+    padding: 0;
+
+}
+i.fas.fa-times-circle.cart {
+    background: white;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+i.fas.fa-times-circle.cart:hover{
+    color:#f55856;
+    transition: 1s;
+}
+p.price-cart {
+    margin-left: 10px;
+    color: grey;
+}
+span.none {
+    display: none;
+}
+p.cart-write-notif {
+    padding: 0;
+    font-size: 14px;
+    font-weight: 700;
+    margin:0
+}
+button.view-all-button {
+    border: 0;
+    width: 90px;
+    height: 45px;
+    background: #e5e5e5;
+}
+button.view-all-button:hover{
+    background: orange;
+    color:white;
+    transition: 1s;
+}
+

@@ -577,8 +577,8 @@
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone02.jpg",
           "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone09_1.jpg",
           "title": "The New Phone",
-          "price": "$800.00",
-          "offer_price": "$750.00",
+          "price": 800,
+          "offer_price": 750,
           "offer": true,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
@@ -587,7 +587,7 @@
           "id": "Phone",
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone08_2.jpg",
           "title": "Tier Pricing Product",
-          "price": "$500.00",
+          "price": 500,
           "price_low": "As low as:$400",
           "new": true,
           "low": true,
@@ -597,7 +597,7 @@
           "id": "Phone",
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07.jpg",
           "title": "Modern Cell Phone",
-          "price": "$999.00",
+          "price": 999,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
         },
@@ -606,7 +606,7 @@
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone08_5.jpg",
           "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone01a_2.jpg",
           "title": "Deep Blue Phone",
-          "price": "$400.00",
+          "price": 400,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
         },
@@ -615,7 +615,7 @@
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone06_2.jpg",
           "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone08_5.jpg",
           "title": "Configurable Phone",
-          "price": "$700.00",
+          "price": 700,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
         },
@@ -623,7 +623,7 @@
           "id": "Phone",
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07a_2.jpg",
           "title": "Simple Phone",
-          "price": "$699.00",
+          "price": 699,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
         },
@@ -631,7 +631,7 @@
           "id": "Phone",
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone10.jpg",
           "title": "Grouped Product",
-          "price": "Starting at: $45.00",
+          "price": 45,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
         },
@@ -639,7 +639,7 @@
           "id": "Phone",
           "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone05_2.jpg",
           "title": "Big Smartphone",
-          "price": "$124.00",
+          "price": 124,
           "new": true,
           "description": "A Configurable product offers the customers a variety of options, which are selected from drop-down lists. For example, a tee shirt that comes in three colors and three sizes would have two drop-down lists of options for Color and Size. Learn More"
         }
@@ -1071,6 +1071,31 @@
       "wishlist": [
         [
           {
+            "id": "product-model-1",
+            "title": "Sample Fashion Product",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1f.jpg",
+            "price": 50,
+            "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1e_2.jpg"
+          }
+        ],
+        [
+          {
+            "id": "Phone",
+            "title": "Modern Cell Phone",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07.jpg",
+            "price": 999
+          }
+        ],
+        [
+          {
+            "id": "Phone",
+            "title": "Big Smartphone",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone05_2.jpg",
+            "price": 124
+          }
+        ],
+        [
+          {
             "id": "product-model-2",
             "title": "Product With Custom",
             "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1a_8.jpg",
@@ -1082,10 +1107,45 @@
         ],
         [
           {
+            "id": "Phone",
+            "title": "Modern Cell Phone",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07.jpg",
+            "price": 999
+          }
+        ],
+        [
+          {
+            "id": "Phone",
+            "title": "Deep Blue Phone",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone08_5.jpg",
+            "price": 400,
+            "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone01a_2.jpg"
+          }
+        ]
+      ],
+      "cart": [
+        [
+          {
             "id": "product-model-3",
             "title": "Configurable Product",
             "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model3a_3.jpg",
             "price": 75
+          }
+        ],
+        [
+          {
+            "id": "product-model-4",
+            "title": "Another Configurable Product",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1b_4.jpg",
+            "price": 100
+          }
+        ],
+        [
+          {
+            "id": "product-model-5",
+            "title": "Simple Dress Example",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model6a.jpg",
+            "price": 35.5
           }
         ]
       ]

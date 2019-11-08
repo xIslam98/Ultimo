@@ -38,7 +38,7 @@ export default class SliderFeature extends React.Component {
        index=this.state.data2.indexOf(utente);
        let s=e.target.dataset.set
        let wishlist= [];
-       wishlist.push(this.state.data2[index].wishlist)
+       wishlist= this.state.data2[index].wishlist
        let exElementi = [
           { 
           id:this.state.data[8].submenu[s].id, 
@@ -57,11 +57,18 @@ export default class SliderFeature extends React.Component {
          console.log(res);
          console.log(res.data);
        })
-       Swal.fire({
-            type: 'success',
-            title: 'Registrazione',
-            text: 'Operazione Completate'
-          })
+       const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    })              
+    Toast.fire({
+        type: 'success',
+        title: 'Signed in successfully'
+    })
+      }else{
+        window.location.href = "http://localhost:3000/login";
       }
     }
   render() {
@@ -88,7 +95,7 @@ export default class SliderFeature extends React.Component {
               ? 
                 <img className="img-slide-hide" src={this.state.data[8].submenu[index].image2}></img>
                 : <span></span>
-                }<i class="fas fa-heart wishlist"  onClick={(e)=>this.AddProductWish(e)} data-set={index}></i>
+                }<Link to ={'/'} ><i class="fas fa-heart wishlist"  onClick={(e)=>this.AddProductWish(e)} data-set={index}></i></Link>
                 <i class="fas fa-box"></i>
                 </div>
                 <span className="sticker-wrapper top-right">
@@ -106,7 +113,7 @@ export default class SliderFeature extends React.Component {
               ? 
                 <img className="img-slide-hide" src={this.state.data[8].submenu[index].image2}></img>
                 : <span></span>
-                } <i class="fas fa-heart wishlist" onClick={(e)=>this.AddProductWish(e)} data-set={index}></i>
+                } <Link to={`/`}><i class="fas fa-heart wishlist" onClick={(e)=>this.AddProductWish(e)} data-set={index}></i></Link>
                 <i class="fas fa-box"></i>
                 </div>
                   <div className="img-0-slide">{this.state.data[8].submenu[index].title}</div>

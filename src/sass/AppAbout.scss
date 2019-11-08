@@ -44,6 +44,10 @@ i.fab.fa-skype {
     justify-content: center;
     font-size: 25px;
 }
+i.fab.fa-skype:hover{
+    background:orange;
+    transition: .5s;
+}
 i.fas.fa-envelope {
     border-radius: 50%;
     background-color: #f55856;
@@ -56,17 +60,9 @@ i.fas.fa-envelope {
     justify-content: center;
     font-size: 25px;
 }
-i.fas.fa-mobile {
-    border-radius: 50%;
-    background-color: #f55856;
-    color: #ffffff;
-    width: 40px;
-    height: 40px;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
+i.fas.fa-envelope:hover{
+    background:orange;
+    transition: .5s;
 }
 i.fas.fa-mobile {
     border-radius: 50%;
@@ -79,6 +75,26 @@ i.fas.fa-mobile {
     align-items: center;
     justify-content: center;
     font-size: 25px;
+}
+i.fas.fa-mobile:hover{
+    background:orange;
+    transition: .5s;
+}
+i.fas.fa-mobile {
+    border-radius: 50%;
+    background-color: #f55856;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+i.fas.fa-tty:hover{
+    background:orange;
+    transition: .5s;
 }
 i.fas.fa-tty {
     border-radius: 50%;
@@ -92,6 +108,10 @@ i.fas.fa-tty {
     justify-content: center;
     font-size: 25px;
 }
+i.fa-airbnb:hover{
+    background:orange;
+    transition: .5s;
+}
 i.fa-airbnb{
     border-radius: 50%;
     background-color: #f55856;
@@ -103,6 +123,10 @@ i.fa-airbnb{
     align-items: center;
     justify-content: center;
     font-size: 25px;
+}
+i.fa-android:hover{
+    background:orange;
+    transition: .5s;
 }
 i.fa-android{
     border-radius: 50%;
@@ -116,6 +140,10 @@ i.fa-android{
     justify-content: center;
     font-size: 25px;
 }
+i.fa-facebook-f:hover{
+    background:orange;
+    transition: .5s;
+}
 i.fa-facebook-f{
     border-radius: 50%;
     background-color: #f55856;
@@ -127,6 +155,10 @@ i.fa-facebook-f{
     align-items: center;
     justify-content: center;
     font-size: 25px;
+}
+i.fa-linkedin:hover{
+    background:orange;
+    transition: .5s;
 }
 i.fa-linkedin{
     border-radius: 50%;
