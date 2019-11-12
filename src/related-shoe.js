@@ -28,7 +28,7 @@ export default class RelatedShoes extends React.Component {
       arrows:true
     };
     return (
-    <Slider {...settings}>
+    <Slider  className="slider-related1" {...settings}>
        {  this.state.data[14].submenu.map((mater,index)=>{
         return(
         <div >

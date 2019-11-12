@@ -28,7 +28,7 @@ export default class RelatedAcces extends React.Component {
       arrows:true
     };
     return (
-    <Slider {...settings}>
+    <Slider className="slider-related1" {...settings}>
        {  this.state.data[16].submenu.map((mater,index)=>{
         return(
         <div >

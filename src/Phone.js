@@ -223,8 +223,8 @@ render(){
                                         <div className="img-0-slide">{this.state.data[9].submenu[index].title}</div> 
                                         <div className="simple-flex2">                           
                                         <span className="img-1-price">{this.state.data[9].submenu[index].price}$</span>
-                                    <span className="img-2-offer">{this.state.data[9].submenu[index].offer_price}</span>
-                                    <button className="hover-apparence">Add to Cart</button>
+                                    <span className="img-2-offer">{this.state.data[9].submenu[index].offer_price}$</span>
+                                    <button className="hover-apparence">View Details</button>
                                     </div>
                                         </Link> 
                                 :
@@ -237,7 +237,7 @@ render(){
                                     <div className="img-0-slide">{this.state.data[9].submenu[index].title}</div>
                                     <div className="simple-flex2">
                                     <span className="img-0-slide">{this.state.data[9].submenu[index].price}$</span>
-                                    <button className="hover-apparence">Add to cart</button>
+                                    <button className="hover-apparence">View Details</button>
                                     </div>
                                     </Link> 
                                     
@@ -252,7 +252,7 @@ render(){
                             <div className="product-plp">
                     { this.state.data[9].submenu[index].offer  
                     ? 
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile">
                         <div className="contenitor-list">
                     <Link to={`/Feature-phone?id=${index}`}>
                         <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
@@ -266,7 +266,7 @@ render(){
                         <div className="regroup-list2">
                         <div className="regroup-list">
                             <div className="img-0-slide">{this.state.data[9].submenu[index].title}</div>
-                            <span className="img-2-offer">{this.state.data[9].submenu[index].offer_price}</span>
+                            <span className="img-2-offer">{this.state.data[9].submenu[index].offer_price}$</span>
                         </div>
                         <div className="regroup-list">
                             <div className="simple-flex">
@@ -286,7 +286,7 @@ render(){
                         
                         </div>
                     :
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile">
                         <div className="contenitor-list">
                     <Link to={`/Feature-phone?id=${index}`}>
                         <img className="img-slide2" src={this.state.data[9].submenu[index].image}></img>
@@ -301,7 +301,7 @@ render(){
                                 <div className="white-color"></div>
                                 <div className="black-color"></div>
                             </div>
-                            <button>View Details</button>
+                            <Link to={`/Feature-phone?id=${index}`}><button>View Details</button></Link>
                         </div>
                         <div className="simple-flex">
                         <span className="img-0-description">{this.state.data[9].submenu[index].description}$</span>

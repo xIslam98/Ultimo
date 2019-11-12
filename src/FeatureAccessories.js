@@ -1,3 +1,4 @@
+    /* eslint-disable no-restricted-globals */
 import React, { Component } from 'react';
 import './font-awesome/css/brands.css';
 import './font-awesome/css/solid.css';
@@ -8,9 +9,13 @@ import Related from './carousel-related';
 import axios from 'axios';
 import Bottomphone from './carousel-bottom-phone';
 import RelatedAccess from './carousel-related-accessories';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
  
 let tempo;
-
+let index;
+let contact;
+let utente;
 
 export default class FeatureAccessories extends React.Component {
     constructor (props) {
@@ -19,15 +24,22 @@ export default class FeatureAccessories extends React.Component {
             s: 1,
             color: "",
             size: "",
-            data: "undefined"
+            data: "undefined",
+            data2:"undefined"
           }
           this.select = this.select.bind(this)
           this.addNumber = this.addNumber.bind(this)
           this.removeNumber = this.removeNumber.bind(this)
           this.changeColor = this.changeColor.bind(this)
           this.changesize = this.changesize.bind(this)
+          this.Addcart=this.Addcart.bind(this)
         }
-    componentDidMount () {
+    componentDidMount () { axios.get('http://127.0.0.1:7000/utenti')
+      .then((response) => {
+    this.data2 = response.data;
+      console.log(this.data2)
+      this.setState({data2: response.data});
+      });
         axios.get('http://127.0.0.1:7000/menu')
         .then((response) => {
       this.data = response.data;
@@ -35,6 +47,48 @@ export default class FeatureAccessories extends React.Component {
       this.setState({data: response.data});
       });
     }
+   
+    Addcart(e){
+        if(sessionStorage.length>0){
+            const  dataindex = location.search.split("=");
+           contact = sessionStorage.getItem("user");
+         utente=this.state.data2.find((element) => { return element.username === contact})
+         index=this.state.data2.indexOf(utente);
+         let cart= [];
+         cart= this.state.data2[index].cart
+         let exElementi = [
+            { 
+            id:this.state.data[16].submenu[dataindex[1]].id, 
+            title:this.state.data[16].submenu[dataindex[1]].title,
+            image:this.state.data[16].submenu[dataindex[1]].image,
+            offer:this.state.data[16].submenu[dataindex[1]].offer,
+            offer_price:this.state.data[16].submenu[dataindex[1]].offer_price,
+            price:this.state.data[16].submenu[dataindex[1]].price,
+            image2:this.state.data[16].submenu[dataindex[1]].image2 
+            }
+          ]
+          cart.push(exElementi);
+          console.log(this.state.data2);
+         axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart})
+         .then(res => {
+           console.log(res);
+           console.log(res.data);
+         })
+         const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000
+      })              
+      Toast.fire({
+          type: 'success',
+          title: 'Signed in successfully'
+      })
+      window.location.reload();
+    }else{
+          window.location.href = "http://localhost:3000/login";
+        }
+      }
         addNumber(){
             tempo=this.state.s+1
             this.setState({s: tempo})
@@ -68,7 +122,7 @@ export default class FeatureAccessories extends React.Component {
       return(
           <div>
               <div className="back">
-                  <div className="regroup-feature">
+                  <div className="regroup-feature mobile">
                       <div className="img-feature">
                       <div className="zoom1-flex">
                     <ContentZoom zoomPercent={250}
@@ -137,8 +191,8 @@ export default class FeatureAccessories extends React.Component {
                                <div className="size-m" onClick={this.changesize} data-set="m">M</div>
 
                            </div>
-                           <div className="regroup2">
-                           <button className="add-to-cart">Add To Cart</button>
+                           <div className="regroup2 mobile">
+                           <button className="add-to-cart" onClick={(e)=>this.Addcart(e)} >Add To Cart</button>
                                 <span>Qty:</span>
                                 <div className="regroup3">
                                     <input type="text"  className="qty" value={this.state.s} data-set="quantity" onChange={this.select}></input>                              
@@ -285,7 +339,7 @@ Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit s
                 </div>
                 </div>
                 <div className="related">
-                    <span>Related</span><span className="section-line"></span>
+                    <span className="relative-relate">Related</span><span className="section-line relative-relate"></span>
                 <RelatedAccess />
                 </div>
                 </div>

@@ -19,9 +19,30 @@ export default class Header extends Component{
         super(props)
         this.state = {
             data: "undefined",
-            data2:"undefined"
+            data2:"undefined",
+            cart:"mobile-cart",
+            profile:"mobile-profile",
+            search:"mobile-search",
+            navbarcomp:"mobile-navbarcomp",
+            accordiwomen:"list-complete"
         }
         this.takeIndex=this.takeIndex.bind(this);
+        this.OpenMobileCart=this.OpenMobileCart.bind(this)
+        this.OpenMobileProfile=this.OpenMobileProfile.bind(this)
+        this.OpenMobileSearch=this.OpenMobileSearch.bind(this)
+        this.OpenNavbarcomp=this.OpenNavbarcomp.bind(this)
+    }
+    accordionAll(state_index,index){
+        if(state_index==="list-complete"){
+              this.setState({
+                [index]: "list-complete-active"
+        }); 
+        }else{
+            this.setState({
+                [index]:"list-complete"
+            })
+        }
+     
     }
 componentDidMount () { 
     axios.get('http://127.0.0.1:7000/utenti')
@@ -74,12 +95,22 @@ printFunction3(index){
         )
     }
 }
+removecart(e){
+        contprice=0;
+        let cont=e.target.dataset.set;
+        //let tempodelete=this.state.data2[index].cart[cont][0].id;
+        this.state.data2[index].cart.splice(cont,1)
+        let utenti=this.state.data2; 
+        this.setState({data2: utenti})
+        let cart= this.state.data2[index].cart;
+        axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart}) 
+}
 deletestorage(e){
  window.sessionStorage.removeItem("user")
  window.sessionStorage.removeItem("psw")
  window.location.reload(0);
 }
-takeIndex(e){ 
+takeIndex(e){
     if(sessionStorage.length>0){
     contact = sessionStorage.getItem("user");
     utente=this.state.data2.find((element) => { return element.username === contact})
@@ -90,6 +121,35 @@ takeIndex(e){
         }
     }
 }
+    OpenMobileCart(e){
+        if(this.state.cart === "mobile-cart"){
+        this.setState({cart: "mobile-cart-active"})
+    }else{
+        this.setState({cart: "mobile-cart"})
+    }
+    }
+    OpenMobileProfile(e){
+        if(this.state.profile === "mobile-profile"){
+        this.setState({profile: "mobile-profile-active"})
+    }else{
+        this.setState({profile: "mobile-profile"})
+    }
+    }
+    OpenMobileSearch(e){
+        if(this.state.search === "mobile-search"){
+        this.setState({search: "mobile-search-active"})
+    }else{
+        this.setState({search: "mobile-search"})
+    }
+    }
+    OpenNavbarcomp(e){
+        if(this.state.navbarcomp === "mobile-navbarcomp"){
+        this.setState({navbarcomp: "mobile-navbarcomp-active"})
+    }else{
+        this.setState({navbarcomp: "mobile-navbarcomp"})
+    }
+    }
+
 render(){
     
     if (this.state.data[0].title !== undefined) {
@@ -128,7 +188,7 @@ render(){
         </div>
         <div className="second-header">
             <div className="image-logo">
-                <img src="http://ultimo.infortis-themes.com/demo/skin/frontend/ultimo/default/images/logo-3.png"></img>
+            <Link to={`/`}> <img src="http://ultimo.infortis-themes.com/demo/skin/frontend/ultimo/default/images/logo-3.png"></img></Link>
                 <div className="second-right">
                     <ul className="links2">
                         
@@ -171,7 +231,7 @@ render(){
                                     <p className="price-cart">Price:{this.state.data2[index].cart[index2][0].price}$</p>
                                     <span className="none">{contprice=contprice+this.state.data2[index].cart[index2][0].price}</span>
                                 </div>
-                                <i class="fas fa-times-circle cart"></i>
+                                <i class="fas fa-times-circle cart" onClick={(e)=>this.removecart(e)}></i>
                             </div>                       
                         :
                             <span>You Have no items into the cart </span>
@@ -194,7 +254,7 @@ render(){
     <div className="back">
     <div className="navbar">
                         <ul className="navbar">
-                            <li><a className="home-navbar" href="http://localhost:3000/"><img className="home-logo" src={homelogo}></img>Home</a></li>                                
+                            <Link to={'/'}><li><a className="home-navbar"><img className="home-logo" src={homelogo}></img>Home</a></li></Link>                               
                                 <li className="dropdown4">
                                 <Link to={`/Women`} className="all-links"><a className="women">{this.state.data[0].title}</a></Link>
                                 <div className="women-content">
@@ -482,6 +542,92 @@ render(){
                          
                     </div>
     </div>
+    <div className="navbar-mobile">
+        <div>
+            <ul className="navbar-mobile">
+                <li className="icon-menu-mobile1"><i class="fas fa-bars" onClick={(e)=>this.OpenNavbarcomp(e)}></i></li>
+                <li className="icon-menu-mobile2"><i class="fas fa-search" onClick={(e)=>this.OpenMobileSearch(e)}></i></li>
+                <li className="icon-menu-mobile3"><i class="far fa-user" onClick={(e)=>this.OpenMobileProfile(e)}></i></li>
+                <li className="icon-menu-mobile4"><i class="fas fa-shopping-cart"  onClick={(e)=>this.OpenMobileCart(e)} ></i>{this.takeIndex()}</li>
+            </ul>
+        </div>
+        <div className={this.state.cart}>
+                        {
+                            sessionStorage.length>0
+                            ?   <span className="mobile-span"><p className="cart-write-notif" >Recently Added Item(s)</p>
+                            
+                        {  this.state.data2[index].cart.map((mater,index2)=>{
+                            return (
+                            <span>
+                        { inserisci>0
+                        ?  
+                            <div className="simple-flex">
+                                <img className="img-cart" src={this.state.data2[index].cart[index2][0].image}></img>
+                                <div className="simple-flex-cart">
+                                    <p className="title-cart">{this.state.data2[index].cart[index2][0].title}</p>
+                                    <p className="price-cart">Price:{this.state.data2[index].cart[index2][0].price}$</p>
+                                    <span className="none">{contprice=contprice+this.state.data2[index].cart[index2][0].price}</span>
+                                </div>
+                                <i class="fas fa-times-circle cart" onClick={(e)=>this.removecart(e)}></i>
+                            </div>                       
+                        :
+                            <span>You Have no items into the cart </span>
+                        }
+                        </span>) })
+                } 
+                <p className="cart-write-notif">Cart Subtotal:{contprice}$</p>
+                <p className="cart-write-notif">({contprice}$ Incl. Tax)</p>
+                <Link to={'/cart'}><button className="view-all-button">View All</button></Link>
+                </span>
+                :<span>You have no item into your Cart</span>
+                     }   
+                        </div>
+        </div>
+        <div className={this.state.profile}>
+          <ul className="list-profile">
+          <Link to={`/account`}> <li className="list-profile-li">ACCOUNT</li></Link>
+                    {
+                            sessionStorage.length>0
+                            ?
+                            <Link to={`/wishlist`}><li className="list-profile-li">Wishlist</li></Link>
+                            :
+                            <Link to={`/login`}><li className="list-profile-li">Wishlist</li></Link>
+                    }
+                      {
+                            sessionStorage.length>0
+                            ?
+                            <Link to={`/`}><li className="list-profile-li" onClick={(e)=>this.deletestorage(e)} >LOGOUT</li></Link>
+                            :
+                            <Link to={`/login`}><li className="list-profile-li">LOG IN</li></Link>
+                    }
+            
+        </ul>           
+        </div>
+        <div className={this.state.search}>
+        <div className="wrap-search"><input id="search" placetype="text" maxLength="128" placeholder="Search entire store here.."></input><button type submit title="search" className="search"><img className="search-img" src={search}></img></button></div>
+        </div>
+        <div className={this.state.navbarcomp}>
+                    <ul className="mobile-menu-list"> 
+                        <li className="list-mobile" onClick={(e)=>this.accordionAll(this.state.accordiwomen,"accordiwomen")}>{this.state.data[0].title}</li>
+                            <ul className={this.state.accordiwomen}>
+                            {
+                                        this.state.data[0].submenu.map((mater,index)=>{
+                                        return(                 
+                                                <div key={index}>
+                                                    <Link to={`/${this.state.data[0].submenu[index].id}`} className="women1">{this.state.data[0].submenu[index].title}</Link>
+                                                    {this.state.data[0].submenu[index].submenu_menu !== "undefined"  ?    <ul className="women-list"> {this.printFunction(index)} </ul> : console.log("nulla")}
+                                                </div>                             
+                                                 )
+                                                })
+                                        }
+                            </ul>
+                        <li className="list-mobile">{this.state.data[1].title}</li>
+                        <li className="list-mobile">{this.state.data[2].title}</li>
+                        <li className="list-mobile">{this.state.data[5].title}</li>
+                        <li className="list-mobile">{this.state.data[6].title}</li>
+                        <li className="list-mobile">ABOUT US</li>
+                    </ul>
+        </div>
 </div>
    
     )

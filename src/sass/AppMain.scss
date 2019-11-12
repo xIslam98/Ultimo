@@ -10,6 +10,8 @@
 @import './AppRegistration.scss';
 @import './AppAccount.scss';
 @import './AppWishCart.scss';
+
+
 body {
             color: #333333;
             background-color: #f5f5f5;
@@ -541,7 +543,7 @@ select:hover{
                         margin-left: 22px;
                         font-size: 16px;
                         color: grey;
-                        width: 100%;
+                        width: 92%;
                     }
                     a.digital-type:hover{
                         color:#f55856;
@@ -1093,3 +1095,30 @@ select:hover{
                 margin:0;
                 padding:0;
             }
+            ul.navbar-mobile{
+                display:none
+            }
+            .mobile-cart-active {
+            display:none;
+            }
+            .mobile-cart {
+                display:none;
+                }
+                .mobile-profile {
+                    display:none;
+                }
+                .mobile-profile-active{
+                    display:none;
+                }
+                .mobile-search{
+                    display:none;
+                }
+                .mobile-search-active{
+                    display:none;
+                }
+                .mobile-navbarcomp-active{
+                    display:none;
+                }
+                .mobile-navbarcomp{
+                    display:none;
+                }

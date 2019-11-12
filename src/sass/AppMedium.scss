@@ -1,4 +1,64 @@
-@media only screen and (min-width: 768px) and (max-width: 1024px){
+@media only screen and (min-width: 830px) and (max-width: 930px){
+    .compare{
+        display:none;
+    }
+    ul.sliderTray___-vHFQ.sliderAnimation___300FY.carousel__slider-tray.carousel__slider-tray--horizontal {
+        width: 376%;
+    }
+    .horizontalSlider___281Ls {
+        position: relative;
+        overflow: hidden;
+        width: 124%;
+        height: auto;
+    }
+    .sticker {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 0.8em;
+        line-height: 1em;
+        font-weight: bold;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    li.slide___3-Nqo.slideHorizontal___1NzNV.carousel__slide.carousel__slide--visible:hover .sticker {
+        width: 60px;
+        height: 60px;
+    }
+    .sticker-wrapper.top-left {
+        top: 0px;
+        left: 25px;
+        z-index: 1;
+    }
+    img.img-banner {
+        width: 175px;
+        height: auto;
+        margin-left: 15px;
+    }
+    img.img-banner2 {
+        width: 175px;
+        height: auto;
+        margin-left: 15px;
+    }
+    img.img-banner3 {
+        width: 370px;
+        height: auto;
+        margin-left: 15px;
+    }
+    img.img-slide{
+    width: 78%;
+}
+img.img-slide-brand {
+margin-left: 50px;
+}
+div.about-brand-list{
+    display: contents;
+}
+ul.about-list {
+    font-size: 14px;
+}
+
 
 }
       

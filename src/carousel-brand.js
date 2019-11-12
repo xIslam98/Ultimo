@@ -2,7 +2,8 @@ import React from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import axios from 'axios'
-
+let screen=window.screen.width;
+let slidevisible;
 export default class SliderBrand extends React.Component {
   constructor (props) {
     super(props)
@@ -17,6 +18,11 @@ this.data = response.data;
 console.log(this.data)
 this.setState({data: response.data});
 });
+if(screen<678){
+  slidevisible=2;
+}else{
+  slidevisible=5;
+}
 }
   render() {
     if (this.state.data[0].title) {
@@ -25,7 +31,7 @@ this.setState({data: response.data});
         naturalSlideWidth={100}
         naturalSlideHeight={60}
         totalSlides={10}  
-        visibleSlides={4}     
+        visibleSlides={slidevisible}     
       >
         <ButtonNext className="go-brand"> &rarr; </ButtonNext>
         <ButtonBack className="back-brand"> &#8592; </ButtonBack>

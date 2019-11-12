@@ -76,10 +76,12 @@ export default class Wishlist extends React.Component{
 
     }
     takeindex(){
+    if(this.state.data[2]!==undefined){
     contact = sessionStorage.getItem("user");
     utente=this.state.data2.find((element) => { return element.username === contact})
     index=this.state.data2.indexOf(utente); 
      console.log( this.state.data2[index].wishlist) ;
+    }
     }
     
     insertWishlist(position){

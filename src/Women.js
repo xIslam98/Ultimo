@@ -298,7 +298,7 @@ render(){
                             <div className="product-plp">
                     { this.state.data[17].submenu[index].offer  
                     ? 
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile">
                         <div className="contenitor-list">
                     <Link to={`/Feature-phone?id=${index}`}>
                         <img className="img-slide2" src={this.state.data[17].submenu[index].image}></img>
@@ -332,7 +332,7 @@ render(){
                         
                         </div>
                     :
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile">
                         <div className="contenitor-list">
                     <Link to={`/Feature-phone?id=${index}`}>
                     <div className="simple-relative"> <img className="img-slide2" src={this.state.data[17].submenu[index].image}></img>

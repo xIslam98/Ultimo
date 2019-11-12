@@ -71,15 +71,15 @@ export default class Cart extends React.Component{
         let utenti=this.state.data2; 
         this.setState({data2: utenti})
         let cart= this.state.data2[index].cart;
-        axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart})
-       
-
+        axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart}) 
     }
-    takeindex(){
+    takeindex(e){
+        if(this.state.data[2]!==undefined){
     contact = sessionStorage.getItem("user");
     utente=this.state.data2.find((element) => { return element.username === contact})
     index=this.state.data2.indexOf(utente); 
      console.log( this.state.data2[index].cart) ;
+    }
     }
     
     insertWishlist(position){
@@ -131,10 +131,10 @@ render(){
                 <div><button className="button-wishcart2">Update Shopping Cart</button></div>
             </div>
             <span className="section-line"></span>
-            <div className="regroup-bet">
+            <div className="regroup-bet mobile">
                 <div className="bottom-wishcart-left">
                     <img src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/custom/banners/cart-discount.png"></img>
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile2">
                         <div className="first-part-wishcart-left">
                             <span className="estimate-discount">Estimate Shipping and Tax</span>
                             <span className="section-line"></span>

@@ -2,14 +2,38 @@ import React, { Component } from 'react';
 import './font-awesome/css/brands.css';
 import './font-awesome/css/solid.css';
 import './font-awesome/css/all.css'
-function Footer(){
+export default class Footer extends(Component){
+    constructor (props) {
+        super(props)
+        this.state = {
+            index:"open-modal",
+            index2:"open-modal",
+            index3:"open-modal",
+            index4:"open-modal",
+            index5:"open-modal"
+        }
+        this.accordionAll=this.accordionAll.bind(this);
+    }
+    accordionAll(state_index,index){
+        if(state_index==="open-modal"){
+              this.setState({
+                [index]: "open-modal-active"
+        }); 
+        }else{
+            this.setState({
+                [index]:"open-modal"
+            })
+        }
+     
+    }
+    render(){
     return(
         <div>
 <div className="back-footer">
                     <div className="footer-first">
                         <div className="first-element-footer">
-                            <span className="about-title" >Question</span>
-                            <ul>
+                            <span className="about-title" onClick={(e) => this.accordionAll(this.state.index,"index")} >Question</span>             
+                            <ul className={this.state.index} >
                                 <li className="list-footer"><span className="movement">></span>Terms</li>
                                 <li className="list-footer"><span className="movement">></span>Conditions</li>
                                 <li className="list-footer"><span className="movement">></span>About Us</li>
@@ -17,8 +41,8 @@ function Footer(){
                             </ul>
                         </div>
                         <div className="first-element-footer">
-                            <span className="about-title" >Shipping</span>
-                            <ul>
+                            <span className="about-title" onClick={(e) => this.accordionAll(this.state.index2,"index2")} >Shipping</span>
+                            <ul className={this.state.index2} >
                                 <li className="list-footer"><span className="movement">></span>Delivery</li>
                                 <li className="list-footer"><span className="movement">></span>Track your order</li>
                                 <li className="list-footer"><span className="movement">></span>Buy gift cards</li>
@@ -26,8 +50,8 @@ function Footer(){
                             </ul>
                         </div>
                         <div className="first-element-footer">
-                            <span className="about-title" >About Us</span>
-                        <ul>
+                            <span className="about-title" onClick={(e) => this.accordionAll(this.state.index3,"index3")} >About Us</span>
+                        <ul className={this.state.index3}>
                                 <li className="list-footer"><span className="movement">></span>Responsive</li>
                                 <li className="list-footer"><span className="movement">></span>Magento Themes</li>
                                 <li className="list-footer" ><span className="movement">></span>E-commerce</li>
@@ -35,8 +59,8 @@ function Footer(){
                         </ul>
                         </div>
                         <div className="first-element-footer">
-                            <span className="about-title" >News</span>
-                            <ul>
+                            <span className="about-title"  onClick={(e) => this.accordionAll(this.state.index4,"index4")}>News</span>
+                            <ul className={this.state.index4}>
                                 <li className="list-footer"><span className="movement">></span>What's new</li>
                                 <li className="list-footer"><span className="movement">></span>Products</li>
                                 <li className="list-footer"><span className="movement">></span>Magento Template</li>
@@ -45,7 +69,8 @@ function Footer(){
                         </div>
                         
                         <div className="first-element-footer">
-                            <span className="about-title" >Additional Info</span> 
+                            <span className="about-title" onClick={(e) => this.accordionAll(this.state.index5,"index5")} >Additional Info</span> 
+                            <ul className={this.state.index5}>
                             <div className="regroup">                         
                             <i class="fas fa-map-marker-alt"></i>
                                 <div className="about-block">
@@ -60,6 +85,7 @@ function Footer(){
                                     <p className="para">Twitter account</p>
                                 </div>
                             </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -72,4 +98,5 @@ function Footer(){
                 </div>
                 </div>
                 )
-    }export default Footer
+            }
+    }

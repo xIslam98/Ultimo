@@ -108,7 +108,8 @@ export default class Feature extends React.Component {
               type: 'success',
               title: 'Signed in successfully'
           })
-            }else{
+          window.location.reload();
+        }else{
               window.location.href = "http://localhost:3000/login";
             }
           }
@@ -119,7 +120,7 @@ export default class Feature extends React.Component {
       return(
           <div>
               <div className="back">
-                  <div className="regroup-feature">
+                  <div className="regroup-feature mobile">
                       <div className="img-feature">
                       <div className="zoom1-flex">
                     <ContentZoom zoomPercent={350}
@@ -187,7 +188,7 @@ export default class Feature extends React.Component {
                                <div className="size-m" onClick={this.changesize} data-set="m">M</div>
 
                            </div>
-                           <div className="regroup2">
+                           <div className="regroup2 mobile">
                            <button className="add-to-cart" onClick={(e)=>this.Addcart(e)}>Add To Cart</button>
                                 <span>Qty:</span>
                                 <div className="regroup3">
@@ -217,7 +218,7 @@ export default class Feature extends React.Component {
                       </div>
                   </div>
                   <div className="feature-second-part">
-                      <div className="regroup">
+                      <div className="regroup mobile-second">
                           <div className="accordion-shoes">
                           <div className="accordion">
                   <Accordion>
@@ -335,7 +336,7 @@ Lorem ipsum dolor sit, consectetur adipiscing elit. Etiam neque velit, blandit s
                 </div>
                 </div>
                 <div className="related">
-                    <span>Related</span><span className="section-line"></span>
+                    <span className="relative-relate">Related</span><span className="section-line"></span>
                 <Related />
                 </div>
                 </div>

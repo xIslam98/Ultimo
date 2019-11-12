@@ -8,6 +8,8 @@ import 'sweetalert2/src/sweetalert2.scss'
 let contact;
 let utente;
 let index;
+let screen=window.screen.width;
+let slidevisible;
 export default class SliderFeature extends React.Component {
   constructor (props) {
     super(props)
@@ -30,6 +32,11 @@ export default class SliderFeature extends React.Component {
       console.log(this.data2)
       this.setState({data2: response.data});
       });
+      if(screen<678){
+        slidevisible=2;
+      }else{
+        slidevisible=5;
+      }
     }
     AddProductWish(e){
       if(sessionStorage.length>0){
@@ -78,7 +85,7 @@ export default class SliderFeature extends React.Component {
         naturalSlideWidth={100}
         naturalSlideHeight={160}
         totalSlides={11}  
-        visibleSlides={5}     
+        visibleSlides={slidevisible}     
       >
         <ButtonNext className="go-feature"> &rarr; </ButtonNext>
         <ButtonBack className="back-feature"> &#8592; </ButtonBack>   

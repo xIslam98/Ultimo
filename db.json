@@ -1080,6 +1080,27 @@
         ],
         [
           {
+            "id": "product-model-3",
+            "title": "Configurable Product",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model3a_3.jpg",
+            "price": 75
+          }
+        ],
+        [
+          {
+            "id": "product-model-2",
+            "title": "Product With Custom",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1a_8.jpg",
+            "offer": true,
+            "offer_price": "Special Offer 75.00$",
+            "price": 100,
+            "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model9a.jpg"
+          }
+        ]
+      ],
+      "cart": [
+        [
+          {
             "id": "Phone",
             "title": "Modern Cell Phone",
             "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07.jpg",
@@ -1088,10 +1109,38 @@
         ],
         [
           {
-            "id": "Phone",
-            "title": "Big Smartphone",
-            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone05_2.jpg",
-            "price": 124
+            "id": "Shoe",
+            "title": "Prestige Lite Heels",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/295x/040ec09b1e35df139433887a97daa66f/4/2/428357-0001_1_1_1.jpg",
+            "price": 75
+          }
+        ]
+      ]
+    },
+    {
+      "username": "sar",
+      "mid": "te",
+      "last": "car",
+      "email": "te",
+      "password": "ciao",
+      "confirmpass": "ciao",
+      "id": "9dsi7-R"
+    },
+    {
+      "username": "PP",
+      "mid": "dfa",
+      "last": "casa",
+      "email": "fweaf",
+      "password": "ciao",
+      "confirmpass": "ciao",
+      "id": "EM3nLLk",
+      "cart": [
+        [
+          {
+            "id": "Shoe",
+            "title": "Prestige Lite Heels",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/295x/040ec09b1e35df139433887a97daa66f/4/2/428357-0001_1_1_1.jpg",
+            "price": 75
           }
         ],
         [
@@ -1108,14 +1157,6 @@
         [
           {
             "id": "Phone",
-            "title": "Modern Cell Phone",
-            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07.jpg",
-            "price": 999
-          }
-        ],
-        [
-          {
-            "id": "Phone",
             "title": "Deep Blue Phone",
             "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone08_5.jpg",
             "price": 400,
@@ -1123,15 +1164,7 @@
           }
         ]
       ],
-      "cart": [
-        [
-          {
-            "id": "product-model-3",
-            "title": "Configurable Product",
-            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model3a_3.jpg",
-            "price": 75
-          }
-        ],
+      "wishlist": [
         [
           {
             "id": "product-model-4",
@@ -1147,17 +1180,16 @@
             "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model6a.jpg",
             "price": 35.5
           }
+        ],
+        [
+          {
+            "id": "product-model-4",
+            "title": "Another Configurable Product",
+            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1b_4.jpg",
+            "price": 100
+          }
         ]
       ]
-    },
-    {
-      "username": "sar",
-      "mid": "te",
-      "last": "car",
-      "email": "te",
-      "password": "ciao",
-      "confirmpass": "ciao",
-      "id": "9dsi7-R"
     }
   ]
 }

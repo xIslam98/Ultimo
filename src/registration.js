@@ -76,7 +76,10 @@ registra(e){
         last: last,
         email: email,
         password: password,
-        confirmpass:confirm
+        confirmpass:confirm,
+        cart:[],
+        wishlist:[]
+        
     })
        .then(res => {
          console.log(res);
@@ -97,7 +100,7 @@ render(){
                 <h1 >Create an Account</h1>
                 <h2 className="personal-info">Personal Information</h2>
                 <span className="section-line"></span>
-                <div className="simple-flex">
+                <div className="simple-flex mobile2">
                 <div className="registration-name">
                     <label>First Name</label>
                     <input className="first-name" onChange={(e)=>this.select(e)}></input> 
@@ -121,7 +124,7 @@ render(){
                 </div>
                 <h2 className="personal-info">Login Information</h2>
                 <span className="section-line"></span>
-                <div className="simple-flex">
+                <div className="simple-flex mobile2">
                 <div className="registration-name">
                     <label>Password</label>
                     <input type="password" className="email" onChange={(e)=>this.selectpass(e)}></input> 

@@ -195,7 +195,7 @@ render(){
                                         <div className="simple-flex2">                           
                                         <span className="img-1-price">{this.state.data[15].submenu[index].price}$</span>
                                     <span className="img-2-offer">{this.state.data[15].submenu[index].offer_price}</span>
-                                    <button className="hover-apparence">View Details</button>
+                                    <Link to={`/Feature-bag?id=${index}`}><button className="hover-apparence">View Details</button></Link>
                                     </div>
                                         </Link> 
                                 :
@@ -204,7 +204,7 @@ render(){
                                     <div className="img-0-slide">{this.state.data[15].submenu[index].title}</div>
                                     <div className="simple-flex2">
                                     <span className="img-0-slide">{this.state.data[15].submenu[index].price}$</span>
-                                    <button className="hover-apparence">View Details</button>
+                                    <Link to={`/Feature-bag?id=${index}`}><button className="hover-apparence">View Details</button></Link>
                                     </div>
                                     </Link> 
                                     
@@ -219,7 +219,7 @@ render(){
                             <div className="product-plp">
                     { this.state.data[15].submenu[index].offer  
                     ? 
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile">
                         <div className="contenitor-list">
                     <Link to={`/Feature-bag?id=${index}`}>
                         <img className="img-slide2" src={this.state.data[15].submenu[index].image}></img>
@@ -253,7 +253,7 @@ render(){
                         
                         </div>
                     :
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile">
                         <div className="contenitor-list">
                     <Link to={`/Feature-bag?id=${index}`}>
                         <img className="img-slide2" src={this.state.data[15].submenu[index].image}></img>
@@ -268,7 +268,7 @@ render(){
                                 <div className="white-color"></div>
                                 <div className="black-color"></div>
                             </div>
-                            <button>View Details</button>
+                            <Link to={`/Feature-bag?id=${index}`}><button className="hover-apparence">View Details</button></Link>
                         </div>
                         <div className="simple-flex">
                         <span className="img-0-description">{this.state.data[15].submenu[index].description}$</span>
