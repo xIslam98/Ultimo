@@ -21,12 +21,17 @@ import Women from './Women';
 import Account from './Account';
 import Wishlist from './wishlist';
 import Cart from './cart';
+let s;
 export default class App extends Component {
- render(){
+    
+ render(){ 
+     
+
         return (
+            
             <Router>
         <div className="principal">
-           
+        {window.addEventListener('resize', () => { window.location.reload() })}
             <div className='Home'>
                 <Header />            
                     <Route exact path="/" > 

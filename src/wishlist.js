@@ -128,15 +128,15 @@ render(){
                        )
                    }) 
             }
-            <div className="regroup-bet">
+            <div className="regroup-bet mobile3">
                 <div><button className="button-wishcart">Continue Shopping</button></div>
                 <div><button className="button-wishcart2">Update Shopping Cart</button></div>
             </div>
             <span className="section-line"></span>
-            <div className="regroup-bet">
+            <div className="regroup-bet mobile">
                 <div className="bottom-wishcart-left">
                     <img src="http://ultimo.infortis-themes.com/demo/media/wysiwyg/infortis/ultimo/custom/banners/cart-discount.png"></img>
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile2">
                         <div className="first-part-wishcart-left">
                             <span className="estimate-discount">Estimate Shipping and Tax</span>
                             <span className="section-line"></span>

@@ -17,23 +17,22 @@ export default class About extends Component{
             this.openstateabout2=this.openstateabout2.bind(this);
             this.openstateabout2=this.openstateabout2.bind(this);
             this.openstateabout2=this.openstateabout2.bind(this);
-
-        }
+    }
     componentDidMount () {
         axios.get('http://127.0.0.1:7000/menu')
         .then((response) => {
-      this.data = response.data;
-      console.log(this.data)
-      this.setState({data: response.data});
-      });
+            this.data = response.data;
+            console.log(this.data)
+            this.setState({data: response.data});
+        });
     }
     openstateabout(e){
         if(this.state.about1==="span-mobile-about1"){
-         this.setState({about1: "span-mobile-about1-active"})   
-        }else{
+            this.setState({about1: "span-mobile-about1-active"})   
+        }
+        else{
             this.setState({about1: "span-mobile-about1"})   
         }
-        
     }
     openstateabout2(e){
         if(this.state.about2==="span-mobile-about2"){

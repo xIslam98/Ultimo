@@ -9,11 +9,13 @@ import hot from './hot.png';
 import Carousel from './carousel-item';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import Collapsible from 'react-collapsible';
 let contact;
 let utente;
 let index;
 let inserisci=0;
 let contprice=0;
+let cont1=0
 export default class Header extends Component{
     constructor (props) {
         super(props)
@@ -25,6 +27,7 @@ export default class Header extends Component{
             search:"mobile-search",
             navbarcomp:"mobile-navbarcomp",
             accordiwomen:"list-complete"
+            
         }
         this.takeIndex=this.takeIndex.bind(this);
         this.OpenMobileCart=this.OpenMobileCart.bind(this)
@@ -34,6 +37,7 @@ export default class Header extends Component{
     }
     accordionAll(state_index,index){
         if(state_index==="list-complete"){
+          
               this.setState({
                 [index]: "list-complete-active"
         }); 
@@ -64,7 +68,7 @@ printFunction(index){
           return (   this.state.data[0].submenu[index].submenu_menu.map((mater,index2)=>{  
          return(            
                 <div key={index2}>
-                    <li className="women-list2"><span className="movement">></span> {this.state.data[0].submenu[1].submenu_menu[index2].title}</li>
+                    <li className="women-list2"><span className="movement mobile">></span> {this.state.data[0].submenu[1].submenu_menu[index2].title}</li>
                 </div>
                 )
             })
@@ -96,6 +100,8 @@ printFunction3(index){
     }
 }
 removecart(e){
+    
+        cont1=0;
         contprice=0;
         let cont=e.target.dataset.set;
         //let tempodelete=this.state.data2[index].cart[cont][0].id;
@@ -104,6 +110,7 @@ removecart(e){
         this.setState({data2: utenti})
         let cart= this.state.data2[index].cart;
         axios.patch(`http://127.0.0.1:7000/utenti/${utente.id}`, {cart}) 
+        
 }
 deletestorage(e){
  window.sessionStorage.removeItem("user")
@@ -124,6 +131,15 @@ takeIndex(e){
     OpenMobileCart(e){
         if(this.state.cart === "mobile-cart"){
         this.setState({cart: "mobile-cart-active"})
+        if(index!=="profile"){
+            this.setState({profile: "mobile-profile"});  
+        }
+        if(index!=="search"){
+            this.setState({search: "mobile-search"});  
+        }
+        if(index!=="navbarcomp"){
+            this.setState({navbarcomp: "mobile-navbarcomp"});  
+        }
     }else{
         this.setState({cart: "mobile-cart"})
     }
@@ -131,6 +147,15 @@ takeIndex(e){
     OpenMobileProfile(e){
         if(this.state.profile === "mobile-profile"){
         this.setState({profile: "mobile-profile-active"})
+        if(index!=="cart"){
+            this.setState({cart: "mobile-cart"});  
+        }
+        if(index!=="search"){
+            this.setState({search: "mobile-search"});  
+        }
+        if(index!=="navbarcomp"){
+            this.setState({navbarcomp: "mobile-navbarcomp"});  
+        }
     }else{
         this.setState({profile: "mobile-profile"})
     }
@@ -138,6 +163,15 @@ takeIndex(e){
     OpenMobileSearch(e){
         if(this.state.search === "mobile-search"){
         this.setState({search: "mobile-search-active"})
+        if(index!=="cart"){
+            this.setState({cart: "mobile-cart"});  
+        }
+        if(index!=="profile"){
+            this.setState({profile: "mobile-profile"});  
+        }
+        if(index!=="navbarcomp"){
+            this.setState({navbarcomp: "mobile-navbarcomp"});  
+        }
     }else{
         this.setState({search: "mobile-search"})
     }
@@ -145,17 +179,27 @@ takeIndex(e){
     OpenNavbarcomp(e){
         if(this.state.navbarcomp === "mobile-navbarcomp"){
         this.setState({navbarcomp: "mobile-navbarcomp-active"})
+        if(index!=="cart"){
+            this.setState({cart: "mobile-cart"});  
+        }
+        if(index!=="profile"){
+            this.setState({profile: "mobile-profile"});  
+        }
+        if(index!=="search"){
+            this.setState({search: "mobile-search"});  
+        }
     }else{
         this.setState({navbarcomp: "mobile-navbarcomp"})
     }
     }
+   
 
 render(){
     
     if (this.state.data[0].title !== undefined) {
     return(
          <div>
-    <div className="Header-up">
+    <div className="Header-up" >
         <div className="Header">
             <div className="upper">
                 <div className="links-header"> 
@@ -215,7 +259,8 @@ render(){
                     <span className="dropdown3">
                     <Link to={'/cart'}><span className="cart"><img className="cart-logo" src={cart}></img>{this.takeIndex()}Cart</span></Link>
                         <span className="cart-content">
-                        {
+                            <span className="none">{cont1=cont1+1}</span>
+                        {  
                             sessionStorage.length>0
                             ?   <span><p className="cart-write-notif" >Recently Added Item(s)</p>
                             
@@ -223,13 +268,14 @@ render(){
                             return (
                             <span>
                         { inserisci>0
-                        ?  
+                        ?   
                             <div className="simple-flex">
                                 <img className="img-cart" src={this.state.data2[index].cart[index2][0].image}></img>
                                 <div className="simple-flex-cart">
                                     <p className="title-cart">{this.state.data2[index].cart[index2][0].title}</p>
                                     <p className="price-cart">Price:{this.state.data2[index].cart[index2][0].price}$</p>
-                                    <span className="none">{contprice=contprice+this.state.data2[index].cart[index2][0].price}</span>
+                                    { cont1 === 1 ? <span className="none">{contprice=contprice+this.state.data2[index].cart[index2][0].price}</span> : <span className="none"></span>}
+                                    
                                 </div>
                                 <i class="fas fa-times-circle cart" onClick={(e)=>this.removecart(e)}></i>
                             </div>                       
@@ -566,7 +612,6 @@ render(){
                                 <div className="simple-flex-cart">
                                     <p className="title-cart">{this.state.data2[index].cart[index2][0].title}</p>
                                     <p className="price-cart">Price:{this.state.data2[index].cart[index2][0].price}$</p>
-                                    <span className="none">{contprice=contprice+this.state.data2[index].cart[index2][0].price}</span>
                                 </div>
                                 <i class="fas fa-times-circle cart" onClick={(e)=>this.removecart(e)}></i>
                             </div>                       
@@ -608,24 +653,89 @@ render(){
         </div>
         <div className={this.state.navbarcomp}>
                     <ul className="mobile-menu-list"> 
-                        <li className="list-mobile" onClick={(e)=>this.accordionAll(this.state.accordiwomen,"accordiwomen")}>{this.state.data[0].title}</li>
-                            <ul className={this.state.accordiwomen}>
-                            {
+                        <Collapsible trigger={this.state.data[0].title}> {
                                         this.state.data[0].submenu.map((mater,index)=>{
                                         return(                 
                                                 <div key={index}>
-                                                    <Link to={`/${this.state.data[0].submenu[index].id}`} className="women1">{this.state.data[0].submenu[index].title}</Link>
-                                                    {this.state.data[0].submenu[index].submenu_menu !== "undefined"  ?    <ul className="women-list"> {this.printFunction(index)} </ul> : console.log("nulla")}
+                                                {
+                                                this.state.data[0].submenu[index].submenu_menu ?
+                                                <Collapsible className="colapse-menu2" trigger={this.state.data[0].submenu[index].title}>
+                                                <Link to={"/Shirt"}><ul className="women-list"  onClick={this.OpenNavbarcomp} > {this.printFunction(index)} </ul></Link>
+                                                </Collapsible>
+                                                : <Link to={"/Shirt"}><span className="colapse-menu2" onClick={this.OpenNavbarcomp}>{this.state.data[0].submenu[index].title}</span></Link>
+                                                }
                                                 </div>                             
-                                                 )
-                                                })
-                                        }
-                            </ul>
-                        <li className="list-mobile">{this.state.data[1].title}</li>
-                        <li className="list-mobile">{this.state.data[2].title}</li>
-                        <li className="list-mobile">{this.state.data[5].title}</li>
-                        <li className="list-mobile">{this.state.data[6].title}</li>
-                        <li className="list-mobile">ABOUT US</li>
+                                                )
+                                        })
+                            }
+                            </Collapsible>
+                           
+                            
+                            <Collapsible className="colapse-menu" trigger={this.state.data[1].title}>
+                            {   
+                                        this.state.data[1].submenu.map((mater,index)=>{  
+                                        return(            
+                                                <div key={index}> 
+                                <Collapsible className="colapse-menu2" trigger={this.state.data[1].submenu[index].title}>
+                            {
+                                        this.state.data[1].submenu[index].submenu_menu.map((mater,index2)=>{  
+                                        return(            
+                                                <div key={index}>
+                                                    <Link to={this.state.data[1].submenu[index].submenu_menu[index2].id}><li className="women-list2" onClick={this.OpenNavbarcomp}><span className="movement mobile">></span> {this.state.data[1].submenu[index].submenu_menu[index2].title}</li></Link>
+                                                </div>
+                                                )
+                                            })
+                            }       
+                            </Collapsible>
+                            </div>
+                                        )
+                            })
+                        }  
+                            </Collapsible>
+
+                        <Collapsible className="colapse-menu" trigger={this.state.data[2].title}>
+                        <Collapsible className="colapse-menu2"trigger= "Phone & Tablets">
+                        {
+                              this.state.data[2].submenu.map((mater,index)=>{  
+                                return(
+                                    <div key={index}>
+                                         <Link to={"Phone"}><li className="women-list2" onClick={this.OpenNavbarcomp}><span className="movement mobile">></span> {this.state.data[2].submenu[index].title}</li></Link>
+                                    </div>
+                                )
+                            })
+                        }
+                        </Collapsible>
+                        <Collapsible className="colapse-menu2" trigger="Accessories">{
+                              this.state.data[3].submenu.map((mater,index)=>{  
+                                return(
+                                    <div key={index}>
+                                        <Link to={"Accessories"}><li className="women-list2" onClick={this.OpenNavbarcomp} ><span className="movement mobile">></span> {this.state.data[3].submenu[index].title}</li></Link>
+                                    </div>
+                                )
+                            })
+                        }</Collapsible>
+                        
+                        <Collapsible className="colapse-menu2" trigger="Cameras">{
+                              this.state.data[4].submenu.map((mater,index)=>{  
+                                return(
+                                    <div key={index}>
+                                        <li className="women-list2"><span className="movement">></span> {this.state.data[4].submenu[index].title}</li>
+                                    </div>
+                                )
+                            })
+                        } </Collapsible>
+                                       
+                        </Collapsible>
+                        <Collapsible className="colapse-menu" trigger={this.state.data[5].title}>{
+                              this.state.data[4].submenu.map((mater,index)=>{  
+                                return(
+                                    <div key={index}>
+                                        <li className="women-list2"><span className="movement">></span> {this.state.data[4].submenu[index].title}</li>
+                                    </div>
+                                )
+                            })
+                        }</Collapsible>
+                        <li className="Collapsible">{this.state.data[13].id}</li>
                     </ul>
         </div>
 </div>

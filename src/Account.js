@@ -68,7 +68,7 @@ render(){
                         <h4 className="font-weight-titles">From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</h4>
                     <h2 className="margin-null" >Account Information</h2>
                     <span className="section-line"></span>
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile2">
                         <div className="half">
                             <div className="half-contact">
                                 <h3 className="h3-title-account">Contact Information</h3>
@@ -89,7 +89,7 @@ render(){
                     </div>
                     <h2 className="margin-null">Address Book</h2>
                     <span className="section-line"></span>
-                    <div className="simple-flex">
+                    <div className="simple-flex mobile2">
                         <div className="half">
                             <div className="half-contact">
                                 <h3 className="h3-title-account">DEFAULT BILLING ADDRESS</h3>

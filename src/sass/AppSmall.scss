@@ -212,7 +212,7 @@ ul.open-modal {
     
 }
 ul.open-modal-active{
-    height: 105px;
+    height: 135px;
     transition: 1s;
     overflow: hidden;
 }  
@@ -360,5 +360,119 @@ button.button-cart-wishcart {
 }
 .input-coupon {
     height: 40px;
+}
+.simple-flex.border {
+    margin-left: 3%;
+    margin-right: 3%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #eee;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+div.title{
+    display:none;
+}
+.image-cont{
+    width: 50%;
+    border: 0;
+}
+.title-cont{
+    align-items: center;
+    justify-content: center;
+    border:0;
+}
+.price-cont{
+    border:0;
+}
+.margin-adjust-span {
+    margin-right: 0px;
+}
+.regroup-bet.mobile3{
+flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+button.button-wishcart {
+    border: 0;
+    background: #e5e5e5;
+    width: 164px;
+    height: 35px;
+    margin: 0%;
+}
+.half{
+    width: 100%;
+    border:0;
+}
+.half2{
+    width: 100%;
+    border:0;
+}
+.lateral-bar-account {
+    display: none;
+}
+.Home {
+    overflow: hidden;
+}
+li.list-mobile {
+    background: #f2f2f2;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    margin: 0;
+    padding:0;
+}
+.Collapsible {
+   margin-top: 20px;
+    text-transform: uppercase;
+}
+.Collapsible.colapse-menu2 {
+    margin-left: 50px;
+}
+.first-colapse{
+margin-top:0px;
+}
+.mobile-menu-list {
+    margin-top: -20px;
+}
+span.movement.mobile {
+    display: none;
+}
+li.women-list2 {
+    margin: 2%;
+}
+.mobile-navbarcomp-active {
+    display: block;
+    margin-left: 2%;
+}
+span.colapse-menu2 {
+    margin-top: 20px;
+    display: flex;
+    text-transform: uppercase;
+    margin-left: 50px;
+}
+.img-0-slide {
+    font-size: 17px;
+    font-weight: 600;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+.shirt-shop {
+    margin-top: -10px;
+}
+h1.shirt-title {
+    margin:0;
+    text-align: center;
+}
+.company-feature {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.carousel{
+margin-right: 11px;
 }
 }

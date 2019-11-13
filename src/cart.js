@@ -126,7 +126,7 @@ render(){
                        )
                    }) 
             }
-            <div className="regroup-bet">
+            <div className="regroup-bet mobile3">
                 <div><button className="button-wishcart">Continue Shopping</button></div>
                 <div><button className="button-wishcart2">Update Shopping Cart</button></div>
             </div>

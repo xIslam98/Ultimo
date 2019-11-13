@@ -53,67 +53,67 @@
       "title": "Fashion",
       "submenu": [
         {
-          "id": "fashion_menu_1",
+          "id": "Women",
           "title": "Tops",
           "submenu_menu": [
             {
-              "id": "fashion_submenu_1",
-              "title": "Causal_top"
+              "id": "Women",
+              "title": "Casual Top"
             },
             {
-              "id": "fashion_submenu_2",
+              "id": "Women",
               "title": "Shirts"
             },
             {
-              "id": "fashion_submenu_3",
+              "id": "Women",
               "title": "Tunic"
             },
             {
-              "id": "fashion_submenu_4",
+              "id": "Women",
               "title": "Vest"
             }
           ]
         },
         {
-          "id": "fashion_menu_2",
-          "title": "Bags",
+          "id": "Bag",
+          "title": "Bag",
           "submenu_menu": [
             {
-              "id": "fashion_submenu_1",
+              "id": "Bag",
               "title": "Designer Bags"
             },
             {
-              "id": "fashion_submenu_2",
+              "id": "Bag",
               "title": "Handbags"
             },
             {
-              "id": "fashion_submenu_3",
+              "id": "Bag",
               "title": "Purses"
             },
             {
-              "id": "fashion_submenu_4",
+              "id": "Bag",
               "title": "Shoulder Bags"
             }
           ]
         },
         {
-          "id": "fashion_menu_3",
+          "id": "Shoe",
           "title": "Shoes",
           "submenu_menu": [
             {
-              "id": "fashion_submenu_1",
+              "id": "Shoe",
               "title": "Flat Shoes"
             },
             {
-              "id": "fashion_submenu_2",
+              "id": "Shoe",
               "title": "Flat Sandals"
             },
             {
-              "id": "fashion_submenu_3",
+              "id": "Shoe",
               "title": "Boots"
             },
             {
-              "id": "fashion_submenu_4",
+              "id": "Shoe",
               "title": "Heels"
             }
           ]
@@ -1085,37 +1085,9 @@
             "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model3a_3.jpg",
             "price": 75
           }
-        ],
-        [
-          {
-            "id": "product-model-2",
-            "title": "Product With Custom",
-            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model1a_8.jpg",
-            "offer": true,
-            "offer_price": "Special Offer 75.00$",
-            "price": 100,
-            "image2": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/m/o/model9a.jpg"
-          }
         ]
       ],
-      "cart": [
-        [
-          {
-            "id": "Phone",
-            "title": "Modern Cell Phone",
-            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/196x/040ec09b1e35df139433887a97daa66f/p/h/phone07.jpg",
-            "price": 999
-          }
-        ],
-        [
-          {
-            "id": "Shoe",
-            "title": "Prestige Lite Heels",
-            "image": "http://ultimo.infortis-themes.com/demo/media/catalog/product/cache/4/small_image/295x/040ec09b1e35df139433887a97daa66f/4/2/428357-0001_1_1_1.jpg",
-            "price": 75
-          }
-        ]
-      ]
+      "cart": []
     },
     {
       "username": "sar",
